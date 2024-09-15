@@ -7,7 +7,7 @@ const Wrapper = ({ children, styles }: Readonly<PropsWithChildren<Props>>) => {
   return (
     <section
       className={`${styles} px-6 
-  lg:px-24`}
+    lg:px-24`}
     >
       {children}
     </section>

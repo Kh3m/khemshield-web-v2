@@ -11,7 +11,7 @@ const EventDetailPage = () => {
   return (
     <main>
       <Wrapper>
-        <BannerBackground minHeight={"min-h-[670px]"}>
+        <BannerBackground minHeight={"min-h-[1070px] lg:min-h-[670px]"}>
           <EventBanner />
         </BannerBackground>
         <WhyJoinEvent />
