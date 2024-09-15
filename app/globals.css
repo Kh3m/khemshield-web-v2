@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+    @apply select-none
+}
+
+/* ANIMATION */
+.animation-play-state-paused-group:hover .animation-play-state-paused {
+    animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+/* SLIDER SCROLL */
+.scroll-snap-type-inline-mandatory {
+scroll-snap-type: inline mandatory;
+}
+
+.overscroll-behavior-inline-contain {
+overscroll-behavior-inline: contain;
+}
+
+.scroll-snap-align-start {
+scroll-snap-align: start
+}
+
+
+/**
+* scrollbar style
+*/
+
+.search-field::-webkit-search-cancel-button { display: none; }
+
+body::-webkit-scrollbar { width: 8px; height: 8px; }
+
+body::-webkit-scrollbar-track {
+    background: #FCC0C0;
+    border-left: 1px solid var(--cultured);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #f68585;
+    border: 3px solid #f68585;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover { 
+    background: #B72627; 
+    border: 3px solid #B72627; 
+}
+
+.has-scrollbar { padding-bottom: 5px; }
+
+.has-scrollbar::-webkit-scrollbar {
+    width: 6px; /* for vertical scroll */
+    height: 6px; /* for horizontal scroll */
+}
+
+.has-hidden-scrollbar::-webkit-scrollbar {
+    width: 0px; /* for vertical scroll */
+    height: 0px; /* for horizontal scroll */
+}
+
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+background: transparent;
+border: 3px solid var(--white);
+border-radius: 20px;
+}
+
+.has-scrollbar:hover::-webkit-scrollbar-thumb { background: #FCC0C0 }
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover { background: #B72627 }
