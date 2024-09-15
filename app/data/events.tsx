@@ -155,7 +155,7 @@ export const eventScheduleData = [
     date: "19th October 2024",
     facilitator: {
       image: elon,
-      name: "Felix Fomengia",
+      name: "Abdul Elon",
     },
     curriculum: {
       topic: "Certification Distribution",
