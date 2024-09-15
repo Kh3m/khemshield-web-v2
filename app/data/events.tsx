@@ -64,7 +64,7 @@ export const eventScheduleData = [
     date: "28th September 2024",
     facilitator: {
       image: abdulkareem,
-      name: "Ahmad Sheikh",
+      name: "Abdul Kareem Adamu",
     },
     curriculum: {
       topic: "Web Development",
@@ -161,7 +161,7 @@ export const eventScheduleData = [
     date: "19th October 2024",
     facilitator: {
       image: elon,
-      name: "Abdul Elon",
+      name: "Engr. Abdul Jamiu Adeiza",
     },
     curriculum: {
       topic: "Certification Distribution",
@@ -205,7 +205,11 @@ export const eventSpeakersData: SpeakerType[] = [
         alt: "linkedin",
         href: "https://www.linkedin.com/in/jonatayo/",
       },
-      { src: instagram, alt: "instagram", href: "" },
+      {
+        src: instagram,
+        alt: "instagram",
+        href: "https://www.instagram.com/ayodelejona?igsh=bWZ1ZjA4ZW1kY3Ju",
+      },
     ],
     role: "Cybersecurity Engineer",
     eventRole: "Facilitator",
@@ -244,7 +248,7 @@ export const eventSpeakersData: SpeakerType[] = [
       {
         src: instagram,
         alt: "instagram",
-        href: "https://www.instagram.com/ayodelejona?igsh=bWZ1ZjA4ZW1kY3Ju",
+        href: "https://www.instagram.com/etz_khem?igsh=OXN0N3M2bHhtNnA4",
       },
     ],
     role: "CTO at Khemshield",
@@ -305,7 +309,7 @@ export const eventSpeakersData: SpeakerType[] = [
       {
         src: linkedin,
         alt: "linkedin",
-        href: "https://www.linkedin.com/in/felix-fomengia-10105b155/",
+        href: "",
       },
       {
         src: instagram,
