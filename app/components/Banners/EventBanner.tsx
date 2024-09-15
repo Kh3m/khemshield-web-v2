@@ -7,6 +7,7 @@ import Image from "next/image";
 import eventBanner from "@/public/assets/images/events/event_1.jpg";
 import CountdownTimer from "@/app/(main)/event/CountdownTimer";
 import ContentSpacing from "../Spacing/ContentSpacing";
+import ButtonRegEvent from "../Buttons/ButtonRegEvent";
 
 const EventBanner = () => {
   return (
@@ -31,16 +32,7 @@ const EventBanner = () => {
         </Text>
         <CountdownTimer targetDate="2024-09-24T04:00:00" />
         <ContentSpacing />
-        <div className="flex items-center gap-4">
-          <Button
-            elementType="link"
-            href="/consultation"
-            variant="primary"
-            styles="text-xs md:text-sm lg:text-base py-4 lg:py-2"
-          >
-            Register for this event
-          </Button>
-        </div>
+        <ButtonRegEvent>Register for this event</ButtonRegEvent>
       </section>
       <section className="lg:w-1/2">
         <Image

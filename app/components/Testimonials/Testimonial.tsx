@@ -28,16 +28,11 @@ interface Props {
 
 const Testimonial = ({ testimonial: { user, review } }: Props) => {
   return (
-    <article
-      className="flex gap-7 
-    lg:max-w-[970px]
-    xl:max-w-[1024px]
-  "
-    >
+    <article className="flex gap-7 min-w-full scroll-snap-align-start ">
       <Image
         src={user.image}
         alt={user.name}
-        className=" w-[164px] h-[164px] rounded-full"
+        className="w-[150px] h-[150px] xs:w-[164px] xs:h-[164px] rounded-full object-cover"
       />
 
       <div>

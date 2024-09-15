@@ -6,6 +6,7 @@ import EventScheduleContent from "./EventScheduleContent";
 import ScheduleButton from "./ScheduleButton";
 import { useState, useRef, useEffect } from "react";
 import { eventScheduleData } from "@/app/data/events";
+import { ArrowLeft, ArrowRight } from "iconsax-react";
 
 const eventSchedules = eventScheduleData;
 
@@ -21,7 +22,7 @@ const EventSchedule = () => {
       contentElement.style.transform = `translateX(-${selectedTab * 100}%)`;
   }, [selectedTab]);
 
-  //   // Scroll event for the button list to synchronize with the content
+  //  Scroll event for the button list to synchronize with the content
   const handleButtonScroll = () => {
     const buttonListElement = buttonListRef.current;
     if (buttonListElement) {
@@ -34,15 +35,54 @@ const EventSchedule = () => {
     }
   };
 
+  const handleNext = () => {
+    if (selectedTab < eventSchedules.length - 1) {
+      setSelectedTab((prev) => prev + 1);
+
+      const buttonListElement = buttonListRef.current;
+      if (buttonListElement) {
+        const buttonWidth =
+          buttonListElement.scrollWidth / eventSchedules.length;
+        buttonListElement.scrollBy({ left: buttonWidth, behavior: "smooth" });
+      }
+    }
+  };
+
+  const handlePrev = () => {
+    if (selectedTab > 0) {
+      setSelectedTab((prev) => prev - 1);
+
+      const buttonListElement = buttonListRef.current;
+      if (buttonListElement) {
+        const buttonWidth =
+          buttonListElement.scrollWidth / eventSchedules.length;
+        buttonListElement.scrollBy({ left: -buttonWidth, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div className="lg:px-10">
       <HeadingSub subheading="Explore">Event Schedule</HeadingSub>
       <ContentSpacing />
+      <div className="flex gap-2 justify-end">
+        <ArrowLeft
+          className={`${selectedTab <= 0 && "text-gray-200"} my-4 w-8 h-8"`}
+          onClick={handlePrev}
+        />
+        <ArrowRight
+          className={`${
+            selectedTab >= eventScheduleData.length - 1 && "text-gray-200"
+          } my-4 w-8 h-8"`}
+          onClick={handleNext}
+        />
+      </div>
 
       {/* Scrollable Schedule Button Tabs */}
       <ul
         ref={buttonListRef}
-        className="flex gap-4 has-hidden-scrollbar overflow-x-auto scroll-snap-type-inline-mandatory overscroll-behavior-inline-contain"
+        className="flex gap-4 has-hidden-scrollbar overflow-x-auto 
+        scroll-snap-type-inline-mandatory overscroll-behavior-inline-contain"
         onScroll={handleButtonScroll} // Detect scrolling
       >
         {eventSchedules.map(({ day, date }, i) => (

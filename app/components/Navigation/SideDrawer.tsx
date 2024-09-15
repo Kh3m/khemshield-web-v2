@@ -4,6 +4,7 @@ import useSideDrawerStore from "@/app/store/side-drawer";
 import { CloseSquare } from "iconsax-react";
 import { ReactNode } from "react";
 import NavLink from "./NavLink";
+import RequestQuoteButton from "../Buttons/RequestQuoteButton";
 
 interface Props {
   items: { text: string; href: string; icon: ReactNode }[];
@@ -40,6 +41,10 @@ const SideDrawer = ({ items }: Readonly<Props>) => {
                 </NavLink>
               </li>
             ))}
+
+            <li className="block xs:hidden my-12">
+              <RequestQuoteButton />
+            </li>
           </ul>
         </section>
       </nav>

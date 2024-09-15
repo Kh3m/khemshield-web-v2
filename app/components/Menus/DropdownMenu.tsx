@@ -1,15 +1,22 @@
 "use client";
 
 import { ArrowDown2 } from "iconsax-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoCheckmark } from "react-icons/io5";
 
 interface Props {
   items: string[];
+  onSelectItem: (selectedItem: string) => void;
 }
-const DropdownMenu = ({ items }: Readonly<Props>) => {
+const DropdownMenu = ({ items, onSelectItem }: Readonly<Props>) => {
   const [selectedItem, setSelectedTIem] = useState(items[0]);
   const [openMenu, setOpenMenu] = useState(false);
+
+  const handleSelectItem = (selectedItem: string) => {
+    setSelectedTIem(selectedItem);
+    onSelectItem(selectedItem);
+    setOpenMenu(false);
+  };
 
   return (
     <nav className="relative">
@@ -42,10 +49,7 @@ const DropdownMenu = ({ items }: Readonly<Props>) => {
           return (
             <li
               key={item}
-              onClick={() => {
-                setSelectedTIem(item);
-                setOpenMenu(false);
-              }}
+              onClick={() => handleSelectItem(item)}
               className={`${
                 isSelected && "bg-primary-light"
               } hover:bg-primary-light px-4 py-2 cursor-pointer

@@ -8,6 +8,7 @@ import BaseSpacing from "@/app/components/Spacing/BaseSpacing";
 import Heading from "@/app/components/Generics/Heading";
 import CountdownTimer from "../CountdownTimer";
 import Button from "@/app/components/Buttons/Button";
+import ButtonRegEvent from "@/app/components/Buttons/ButtonRegEvent";
 
 const reasons = [
   {
@@ -69,7 +70,8 @@ const WhyJoinEvent = () => {
         <BaseSpacing />
         <CountdownTimer targetDate="2024-09-24T04:00:00" />
         <BaseSpacing />
-        <Button variant="primary">Reserve Your Spot</Button>
+
+        <ButtonRegEvent>Reserve Your Spot</ButtonRegEvent>
       </section>
     </section>
   );

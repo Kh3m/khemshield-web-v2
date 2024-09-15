@@ -24,7 +24,7 @@ const HomeBanner = () => {
           business stays safe. We also offer specialized training programs for
           students eager to master these essential skills.
         </Text>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col xs:flex-row items-center gap-4">
           <Button
             elementType="link"
             href="/consultation"

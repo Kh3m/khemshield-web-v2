@@ -1,11 +1,11 @@
 import BannerBackground from "@/app/components/Banners/BannerBackground";
 import EventBanner from "@/app/components/Banners/EventBanner";
 import Wrapper from "@/app/components/Generics/Wrapper";
-import WhyJoinEvent from "./WhyJoinEvent";
-import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
-import EventSpeakers from "./EventSpeakers";
 import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
 import EventSchedule from "./EventSchedule";
+import EventSpeakers from "./EventSpeakers";
+import WhyJoinEvent from "./WhyJoinEvent";
+import ButtonRegEvent from "@/app/components/Buttons/ButtonRegEvent";
 
 const EventDetailPage = () => {
   return (
@@ -19,6 +19,10 @@ const EventDetailPage = () => {
         <EventSpeakers />
         <SectionSpacing />
         <EventSchedule />
+        <SectionSpacing />
+        <div className="flex items-center justify-center">
+          <ButtonRegEvent>Claim Your Seat</ButtonRegEvent>
+        </div>
       </Wrapper>
     </main>
   );

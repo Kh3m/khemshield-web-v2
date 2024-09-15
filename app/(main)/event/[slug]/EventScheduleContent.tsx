@@ -3,7 +3,7 @@ import Text from "@/app/components/Generics/Text";
 import BaseSpacing from "@/app/components/Spacing/BaseSpacing";
 import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
 import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
-import { Clock, Coffee, Location } from "iconsax-react";
+import { Clock, Coffee, Location, PresentionChart } from "iconsax-react";
 import Image, { StaticImageData } from "next/image";
 import { IoVideocamOutline } from "react-icons/io5";
 
@@ -93,10 +93,17 @@ const EventScheduleContent = ({
             className=" h-32 w-32 bg-primary-normal rounded-full p-9
            absolute -bottom-8 -right-8"
           >
-            <IoVideocamOutline
-              size={32}
-              className=" text-white animate-bounce"
-            />
+            {location.toLowerCase() === "zoom" ? (
+              <IoVideocamOutline
+                size={32}
+                className=" text-white animate-bounce"
+              />
+            ) : (
+              <PresentionChart
+                size={32}
+                className="text-white animate-bounce"
+              />
+            )}
           </div>
         </section>
       </article>

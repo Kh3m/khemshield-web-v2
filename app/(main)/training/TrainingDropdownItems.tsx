@@ -10,8 +10,12 @@ const items = [
   "Programming Languages",
   "Technology & Infrastructure",
 ];
-const TrainingDropdownItems = () => {
-  return <DropdownMenu items={items} />;
+
+interface Props {
+  onSelectItem: (selectedItem: string) => void;
+}
+const TrainingDropdownItems = ({ onSelectItem }: Readonly<Props>) => {
+  return <DropdownMenu items={items} onSelectItem={onSelectItem} />;
 };
 
 export default TrainingDropdownItems;

@@ -5,6 +5,7 @@ import NavItems from "./NavItems";
 import Button from "../Buttons/Button";
 import { Menu } from "iconsax-react";
 import MenuTrigger from "../Buttons/MenuTrigger";
+import RequestQuoteButton from "../Buttons/RequestQuoteButton";
 
 const TopNav = () => {
   return (
@@ -13,9 +14,9 @@ const TopNav = () => {
         <Logo withText />
         <NavItems />
         <div className="flex items-center gap-4">
-          <Button variant="primary" elementType="link" href="/request">
-            Request a Quote
-          </Button>
+          <div className="hidden xs:block">
+            <RequestQuoteButton />
+          </div>
           <MenuTrigger>
             <Menu
               size={32}

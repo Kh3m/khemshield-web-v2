@@ -26,7 +26,7 @@ const bottomNavsItems = [
 
 const BottomNavItems = () => {
   return (
-    <ul className="flex items-center gap-14">
+    <ul className="flex items-center gap-8 xs:gap-14">
       {bottomNavsItems.map(({ text, icon, href }) => {
         return (
           <li key={text}>

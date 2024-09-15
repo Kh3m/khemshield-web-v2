@@ -11,9 +11,17 @@ interface Props {
   name: string;
   rating: number;
   review_count: number;
+  category: string;
 }
 
-const Course = ({ name, price, rating, review_count, image }: Props) => {
+const Course = ({
+  name,
+  price,
+  rating,
+  review_count,
+  image,
+  category,
+}: Props) => {
   return (
     <article className=" shadow-khemshadow lg:max-w-[400px]">
       <Image
@@ -24,7 +32,7 @@ const Course = ({ name, price, rating, review_count, image }: Props) => {
       <div className=" py-3 px-6">
         <div className="flex items-center justify-between">
           <div className="py-1 px-[6px] bg-primary-light">
-            <Text color="primary">IT & Software</Text>
+            <Text color="primary">{category}</Text>
           </div>
           <Heading variant="h4">{formatNumber(price)}</Heading>
         </div>

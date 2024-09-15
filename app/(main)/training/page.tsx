@@ -2,8 +2,6 @@ import Breadcrumb from "@/app/components/Generics/Breadcrumb";
 import HeaderContent from "@/app/components/Generics/HeaderContent";
 import Wrapper from "@/app/components/Generics/Wrapper";
 import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
-import Course from "./Course";
-import SearchFilter from "./SearchFilter";
 import Courses from "./Courses";
 
 const TraininPage = () => {
@@ -22,8 +20,6 @@ const TraininPage = () => {
           the practical skills and knowledge needed to excel in cybersecurity,
           IT development, and beyond.
         </HeaderContent>
-        <ContentSpacing />
-        <SearchFilter />
         <ContentSpacing />
         <Courses />
       </Wrapper>

@@ -1,36 +1,58 @@
-import testimonial_1 from "@/public/assets/images/testimonial_1.png";
-import Testimonial, { TestimonialType } from "./Testimonial";
-import ContentSpacing from "../Spacing/ContentSpacing";
-import Wrapper from "../Generics/Wrapper";
+"use client";
 
-const testimonials: TestimonialType[] = [
-  {
-    review: {
-      rating: 5,
-      text: "“Their dedication to understanding our business and tailoring solutions to our specific needs was impressive. From application development to infrastructure protection, they delivered beyond our expectations. We couldn't have asked for a better partner in securing our operations",
-    },
-    user: {
-      image: testimonial_1,
-      name: "Franklin Hicks",
-      role: "Project Manager",
-      company: "Leptons Multiconcept",
-    },
-  },
-];
+import { testimonials } from "@/app/data/testimonials";
+import Wrapper from "../Generics/Wrapper";
+import ContentSpacing from "../Spacing/ContentSpacing";
+import Testimonial from "./Testimonial";
+import { useEffect, useRef, useState } from "react";
 
 const Testimonials = () => {
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleButtonScroll = () => {
+    const testimonialsElement = testimonialsRef.current;
+
+    if (testimonialsElement) {
+      const testimonialsScrollWidth = testimonialsElement.scrollWidth;
+      // Size of each item inside the testimonials section
+      const testimonialsItemSizeScrollLeft = testimonialsElement.scrollLeft;
+
+      const testimonialsItemSize =
+        testimonialsScrollWidth / testimonials.length;
+
+      const activeIndex = Math.round(
+        testimonialsItemSizeScrollLeft / testimonialsItemSize
+      );
+
+      setActiveIndex(activeIndex);
+    }
+  };
+
   return (
     <Wrapper>
-      <section className=" flex items-center justify-center">
+      <section
+        onScroll={handleButtonScroll}
+        ref={testimonialsRef}
+        className=" flex overflow-x-auto has-hidden-scrollbar
+        scroll-snap-type-inline-mandatory overscroll-behavior-inline-contain"
+      >
         {testimonials.map((testimonial) => (
           <Testimonial key={testimonial.user.name} testimonial={testimonial} />
         ))}
       </section>
       <ContentSpacing />
       <div className=" w-max m-auto flex gap-2">
-        <div className=" w-8 h-3 rounded-lg bg-primary-normal"></div>
-        <div className=" w-3 h-3 rounded-lg bg-primary-light"></div>
-        <div className=" w-3 h-3 rounded-lg bg-primary-light"></div>
+        {testimonials.map((_, i) => (
+          <div
+            key={i}
+            className={`${
+              activeIndex === i
+                ? "bg-primary-normal w-8 h-3"
+                : "bg-primary-light  w-3 h-3"
+            }  rounded-lg duration-200`}
+          ></div>
+        ))}
       </div>
     </Wrapper>
   );
