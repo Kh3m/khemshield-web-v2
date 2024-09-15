@@ -52,8 +52,11 @@ const EventScheduleContent = ({
         <BaseSpacing />
 
         <ul>
-          {perks.map(({ icon, title }) => (
-            <li className="flex gap-2 items-center text-gray-400 text-sm my-3">
+          {perks.map(({ icon, title }, i) => (
+            <li
+              key={i}
+              className="flex gap-2 items-center text-gray-400 text-sm my-3"
+            >
               {icon} <p>{title}</p>
             </li>
           ))}
@@ -65,7 +68,7 @@ const EventScheduleContent = ({
         hover:bg-primary-normal duration-200 lg:w-[80%]"
       >
         <section className=" relative overflow-hidden">
-          <section className=" bg-white px-10 py-12">
+          <section className=" bg-white px-4 lg:px-10 py-12">
             <div
               className="flex items-center
           text-primary-normal gap-6"
