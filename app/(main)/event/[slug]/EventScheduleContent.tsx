@@ -3,28 +3,61 @@ import Text from "@/app/components/Generics/Text";
 import BaseSpacing from "@/app/components/Spacing/BaseSpacing";
 import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
 import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
-import { Clock, Location } from "iconsax-react";
-import Image from "next/image";
+import { Clock, Coffee, Location } from "iconsax-react";
+import Image, { StaticImageData } from "next/image";
 import { IoVideocamOutline } from "react-icons/io5";
 
 import HR from "@/app/components/Generics/HR";
-import abdulkareem from "@/public/assets/images/events/abdulkareem.jpeg";
-const EventScheduleContent = () => {
+import { ReactNode } from "react";
+
+interface Props {
+  facilitator: {
+    name: string;
+    image: StaticImageData;
+  };
+  curriculum: {
+    topic: string;
+    subject: string;
+    content: string;
+  };
+
+  time: {
+    from: string;
+    to: string;
+  };
+  location: string;
+  perks: { icon: string | ReactNode; title: string }[];
+}
+const EventScheduleContent = ({
+  facilitator: { image, name },
+  time: { from, to },
+  curriculum: { topic, subject, content },
+  location,
+  perks,
+}: Readonly<Props>) => {
   return (
     <section className=" flex flex-col lg:flex-row">
       <aside className=" lg:px-8 lg:w-1/5">
         <Image
-          src={abdulkareem}
+          src={image}
           alt="Abdul Kareem"
           className=" w-16 h-16 rounded-full object-cover"
         />
-        <Text styles="mt-2">Abdul Kareem Adamu</Text>
+        <Text styles="mt-2">{name}</Text>
         <Text color="primary" styles=" text-sm">
-          Web Development
+          {topic}
         </Text>
         <BaseSpacing />
         <HR />
         <BaseSpacing />
+
+        <ul>
+          {perks.map(({ icon, title }) => (
+            <li className="flex gap-2 items-center text-gray-400 text-sm my-3">
+              {icon} <p>{title}</p>
+            </li>
+          ))}
+        </ul>
       </aside>
 
       <article
@@ -38,27 +71,19 @@ const EventScheduleContent = () => {
           text-primary-normal gap-6"
             >
               <span className="flex items-center gap-2">
-                <Clock size={18} /> <Text color="primary">04PM - 06PM</Text>
+                <Clock size={18} />{" "}
+                <Text color="primary">
+                  {from} - {to}
+                </Text>
               </span>
               <span className="flex items-center gap-2">
-                <Location size={18} /> <Text color="primary">Zoom</Text>
+                <Location size={18} /> <Text color="primary">{location}</Text>
               </span>
             </div>
             <ContentSpacing />
-            <Heading variant="h4">
-              Introduction to HTML, CSS, and JavaScript
-            </Heading>
+            <Heading variant="h4">{subject}</Heading>
             <BaseSpacing />
-            <Text>
-              In this session, we will introduce the core technologies of web
-              development: HTML, CSS, and JavaScript. HTML provides the basic
-              structure of web pages, using tags to organize content. CSS
-              enhances this structure with styles for colors, fonts, and
-              layouts, including responsive design techniques. JavaScript adds
-              interactivity by allowing you to manipulate content and handle
-              events dynamically. This overview will equip you with the
-              essential skills to create and style functional web pages.
-            </Text>
+            <Text>{content}</Text>
             <SectionSpacing />
           </section>
           <div
