@@ -5,50 +5,43 @@ import Text from "@/app/components/Generics/Text";
 import Wrapper from "@/app/components/Generics/Wrapper";
 import SearchInput from "@/app/components/Inputs/SearchInput";
 import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
-import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
 import Image from "next/image";
-
 import BaseSpacing from "@/app/components/Spacing/BaseSpacing";
-
-import event_1 from "@/public/assets/images/events/event_1.jpg";
-import speaker_1 from "@/public/assets/images/events/felix.jpg";
-import speaker_2 from "@/public/assets/images/events/jonathan.jpeg";
-import speaker_3 from "@/public/assets/images/events/saud.jpeg";
-import speaker_4 from "@/public/assets/images/events/speaker_dummy.png";
-import speaker_5 from "@/public/assets/images/events/abdulkareem.jpeg";
-
-import StackedImages from "./StackedImages";
-import Dot from "./Dot";
-import { Clock, Timer } from "iconsax-react";
-import CountdownTimer from "./CountdownTimer";
+import event_1 from "@/public/assets/images/events/event_1.png";
 import Button from "@/app/components/Buttons/Button";
+import { Clock } from "iconsax-react";
+import CountdownTimer from "./CountdownTimer";
+import Dot from "./Dot";
+import StackedImages from "./StackedImages";
+import { speakersImagesData } from "@/app/data/events";
+import { Metadata } from "next";
 
-const speakersImages = [
-  {
-    src: speaker_1,
-    alt: "Speaker",
+export const metadata: Metadata = {
+  title: "Khemshield | Events",
+  description: `Explore our upcoming webinars and events on cybersecurity and software engineering. 
+    Learn from experts, network with peers, and stay updated on the latest trends. Register now`,
+  openGraph: {
+    title: "Khemshield | Events",
+    description: `Explore our upcoming webinars and events on cybersecurity and software engineering. 
+      Learn from experts, network with peers, and stay updated on the latest trends. Register now`,
+    images: [
+      {
+        url: "/assets/images/events/event_1.png", // Make sure the path is correct
+        width: 800,
+        height: 600,
+        alt: "Khemshield Events Image",
+      },
+    ],
+    type: "website",
   },
-  {
-    src: speaker_2,
-    alt: "Speaker",
+  twitter: {
+    card: "summary_large_image",
+    title: "Khemshield | Events",
+    description: `Explore our upcoming webinars and events on cybersecurity and software engineering. 
+      Learn from experts, network with peers, and stay updated on the latest trends. Register now`,
+    images: ["/assets/images/events/event_1.png"], // Path to the image
   },
-  {
-    src: speaker_3,
-    alt: "Speaker",
-  },
-  {
-    src: speaker_4,
-    alt: "Speaker",
-  },
-  {
-    src: speaker_5,
-    alt: "Speaker",
-  },
-  {
-    src: speaker_2,
-    alt: "Speaker",
-  },
-];
+};
 
 const EventPage = () => {
   return (
@@ -82,7 +75,7 @@ const EventPage = () => {
             <Image
               src={event_1}
               alt="2-Week Webinar"
-              className="w-full max-h-[500px] object-cover rounded-2xl"
+              className="w-full max-h-[500px] object-cover object-bottom rounded-2xl"
             />
           </section>
 
@@ -103,7 +96,7 @@ const EventPage = () => {
             <section className=" flex items-center gap-3">
               <Text>Free</Text>
               <Dot />
-              <StackedImages images={speakersImages} />
+              <StackedImages images={speakersImagesData} />
               <Text color="primary">Facilitators</Text>
             </section>
             <BaseSpacing />

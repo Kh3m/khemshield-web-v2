@@ -1,11 +1,17 @@
+import { Coffee, PresentionChart } from "iconsax-react";
+import { IoVideocamOutline } from "react-icons/io5";
+import linkedin from "@/public/assets/images/linkedin.png";
+import instagram from "@/public/assets/images/instagram.png";
+import { SocialType } from "@/app/components/Footer/Socials";
+import { StaticImageData } from "next/image";
+
 import abdulkareem from "@/public/assets/images/events/abdulkareem.jpeg";
 import ahmedoo from "@/public/assets/images/events/ahmedoo.jpg";
 import jonathan from "@/public/assets/images/events/jonathan.jpeg";
 import felix from "@/public/assets/images/events/felix.jpg";
 import saud from "@/public/assets/images/events/saud.jpeg";
 import elon from "@/public/assets/images/events/elon.jpg";
-import { Coffee, PresentionChart } from "iconsax-react";
-import { IoVideocamOutline } from "react-icons/io5";
+import hafsat from "@/public/assets/images/events/hafsat.jpg";
 
 export const eventScheduleData = [
   {
@@ -172,5 +178,170 @@ export const eventScheduleData = [
       { title: "Coffee Break", icon: <Coffee size={18} /> },
       { title: "Live Presentation", icon: <PresentionChart size={18} /> },
     ],
+  },
+];
+
+export type SpeakerType = {
+  image: StaticImageData;
+  name: string;
+  description: string;
+  socials: SocialType[];
+  role: string;
+  eventRole: string;
+  company: string;
+  isHost?: boolean;
+};
+
+export const eventSpeakersData: SpeakerType[] = [
+  {
+    image: jonathan,
+    name: "Jonathan Ayodele",
+    description: `ISO 27001 Lead Implementer, Security+, CCNA, CompTIA A+, Microsoft
+        certifications, complemented by a Master’s degree in Cybersecurity from
+        Cardiff University, UK.`,
+    socials: [
+      {
+        src: linkedin,
+        alt: "linkedin",
+        href: "https://www.linkedin.com/in/jonatayo/",
+      },
+      { src: instagram, alt: "instagram", href: "" },
+    ],
+    role: "Cybersecurity Engineer",
+    eventRole: "Facilitator",
+    company: "Chevening Scholar",
+  },
+
+  {
+    image: saud,
+    name: "Saud Adam",
+    description: `Master’s in Information Security and Cyber Forensics (SRM University, India). 
+    Chief Consulting Officer, Information Security Analyst, and System Analyst`,
+    socials: [
+      {
+        src: linkedin,
+        alt: "linkedin",
+        href: "https://www.linkedin.com/in/saud-adam-89a78660/",
+      },
+      { src: instagram, alt: "instagram", href: "" },
+    ],
+    role: "Lecturer Bayero University Kano (BUK)",
+    eventRole: "Facilitator",
+    company: "Coprime Ltd.",
+  },
+
+  {
+    image: abdulkareem,
+    name: "Abdul Kareem Adamu",
+    description: `CTO at Khemshield, leading the development of secure web and mobile applications, 
+    providing cybersecurity consulting, and offering specialized training programs.`,
+    socials: [
+      {
+        src: linkedin,
+        alt: "linkedin",
+        href: "https://www.linkedin.com/in/etzkhem/",
+      },
+      {
+        src: instagram,
+        alt: "instagram",
+        href: "https://www.instagram.com/ayodelejona?igsh=bWZ1ZjA4ZW1kY3Ju",
+      },
+    ],
+    role: "CTO at Khemshield",
+    eventRole: "Host",
+    company: "Khemshield Ltd.",
+    isHost: true,
+  },
+
+  {
+    image: felix,
+    name: "Felix Fomengia",
+    description: `Chevening Alumnus, MSc in Cybersecurity & Forensics, Ethical Hacker, Cybersecurity Professional, 
+    Copywriter, and Award-winning Techpreneur.`,
+    socials: [
+      {
+        src: linkedin,
+        alt: "linkedin",
+        href: "https://www.linkedin.com/in/felix-fomengia-10105b155/",
+      },
+      {
+        src: instagram,
+        alt: "instagram",
+        href: "https://www.instagram.com/felixfomengia?igsh=M3Q5NzVmNGNzaGV2",
+      },
+    ],
+    eventRole: "Facilitator",
+    role: "Ethical Hacker",
+    company: "Chevening Alumnus",
+  },
+
+  {
+    image: ahmedoo,
+    name: "Ahmad Sheikh",
+    description: `Chevening Alumnus, MSc in Cybersecurity & Forensics, Ethical Hacker, Cybersecurity Professional, 
+    Copywriter, and Award-winning Techpreneur.`,
+    socials: [
+      {
+        src: linkedin,
+        alt: "linkedin",
+        href: "https://www.linkedin.com/in/ahmedootech",
+      },
+      {
+        src: instagram,
+        alt: "instagram",
+        href: "https://www.instagram.com/ahmedootech",
+      },
+    ],
+    eventRole: "Facilitator",
+    role: "Fullstack Webdeveloper",
+    company: "DooTech",
+  },
+  {
+    image: hafsat,
+    name: "Hafsat Rabi’u Haruna",
+    description: `Chevening Alumnus, MSc in Cybersecurity & Forensics, Ethical Hacker, Cybersecurity Professional, 
+    Copywriter, and Award-winning Techpreneur.`,
+    socials: [
+      {
+        src: linkedin,
+        alt: "linkedin",
+        href: "https://www.linkedin.com/in/felix-fomengia-10105b155/",
+      },
+      {
+        src: instagram,
+        alt: "instagram",
+        href: "https://www.instagram.com/nana_hafserh?igsh=MXVteGUyZnV5dmhqbw==",
+      },
+    ],
+    eventRole: "Program Director",
+    role: "Disability Advocate",
+    company: "Special GEMS Foundation",
+  },
+];
+
+export const speakersImagesData = [
+  {
+    src: felix,
+    alt: "Speaker",
+  },
+  {
+    src: jonathan,
+    alt: "Speaker",
+  },
+  {
+    src: saud,
+    alt: "Speaker",
+  },
+  {
+    src: hafsat,
+    alt: "Speaker",
+  },
+  {
+    src: ahmedoo,
+    alt: "Speaker",
+  },
+  {
+    src: abdulkareem,
+    alt: "Speaker",
   },
 ];

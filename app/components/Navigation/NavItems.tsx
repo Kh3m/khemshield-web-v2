@@ -7,9 +7,13 @@ const navsItems = [
     href: "/",
   },
   {
-    text: "Project",
-    href: "/project",
+    text: "Events",
+    href: "/event",
   },
+  // {
+  //   text: "Project",
+  //   href: "/project",
+  // },
   {
     text: "Service",
     href: "/service",
@@ -31,14 +35,14 @@ const navsItems = [
         text: "Training Program",
         href: "/training",
       },
-      {
-        text: "Events",
-        href: "/event",
-      },
-      {
-        text: "Blog",
-        href: "/blog",
-      },
+      // {
+      //   text: "Events",
+      //   href: "/event",
+      // },
+      // {
+      //   text: "Blog",
+      //   href: "/blog",
+      // },
       {
         text: "Faq",
         href: "/faq",

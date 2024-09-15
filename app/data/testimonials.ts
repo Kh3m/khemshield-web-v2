@@ -3,7 +3,7 @@ import adesola from "@/public/assets/images/testimonials/adesola.jpg";
 import olabobo1 from "@/public/assets/images/testimonials/olabobo1.jpg";
 import { TestimonialType } from "../components/Testimonials/Testimonial";
 
-export const testimonials: TestimonialType[] = [
+export const testimonialsData: TestimonialType[] = [
   {
     review: {
       rating: 5,

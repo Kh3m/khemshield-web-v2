@@ -1,10 +1,10 @@
 "use client";
 
-import { testimonials } from "@/app/data/testimonials";
+import { testimonialsData } from "@/app/data/testimonials";
+import { useRef, useState } from "react";
 import Wrapper from "../Generics/Wrapper";
 import ContentSpacing from "../Spacing/ContentSpacing";
 import Testimonial from "./Testimonial";
-import { useEffect, useRef, useState } from "react";
 
 const Testimonials = () => {
   const testimonialsRef = useRef<HTMLDivElement>(null);
@@ -12,19 +12,19 @@ const Testimonials = () => {
 
   const handleButtonScroll = () => {
     const testimonialsElement = testimonialsRef.current;
-
     if (testimonialsElement) {
+      // Get the entire width of the scroll container
       const testimonialsScrollWidth = testimonialsElement.scrollWidth;
-      // Size of each item inside the testimonials section
-      const testimonialsItemSizeScrollLeft = testimonialsElement.scrollLeft;
-
+      // Get the size of each item inside the testimonials section
       const testimonialsItemSize =
-        testimonialsScrollWidth / testimonials.length;
-
+        testimonialsScrollWidth / testimonialsData.length;
+      // Get the scroll horizontal scroll value
+      const testimonialsItemSizeScrollLeft = testimonialsElement.scrollLeft;
+      //  Get the active index
       const activeIndex = Math.round(
         testimonialsItemSizeScrollLeft / testimonialsItemSize
       );
-
+      // Set the state
       setActiveIndex(activeIndex);
     }
   };
@@ -37,13 +37,13 @@ const Testimonials = () => {
         className=" flex overflow-x-auto has-hidden-scrollbar
         scroll-snap-type-inline-mandatory overscroll-behavior-inline-contain"
       >
-        {testimonials.map((testimonial) => (
+        {testimonialsData.map((testimonial) => (
           <Testimonial key={testimonial.user.name} testimonial={testimonial} />
         ))}
       </section>
       <ContentSpacing />
       <div className=" w-max m-auto flex gap-2">
-        {testimonials.map((_, i) => (
+        {testimonialsData.map((_, i) => (
           <div
             key={i}
             className={`${

@@ -3,8 +3,8 @@ import Image from "next/image";
 import Text from "@/app/components/Generics/Text";
 import Heading from "@/app/components/Generics/Heading";
 import Socials from "@/app/components/Footer/Socials";
-import { SpeakerType } from "./EventSpeakers";
 import HR from "@/app/components/Generics/HR";
+import { SpeakerType } from "@/app/data/events";
 
 interface Props {
   speaker: SpeakerType;
@@ -38,7 +38,7 @@ const EventSpeakerCard = ({
       <Image
         src={image}
         alt="Jonathan"
-        className=" w-36 h-36 rounded-full my-4 object-cover"
+        className=" w-36 h-36 rounded-full my-4 object-cover object-top"
       />
       <Heading variant="h4">{name}</Heading>
       {/* <div className="h-[120px]">

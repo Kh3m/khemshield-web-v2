@@ -4,7 +4,7 @@ import Text from "../Generics/Text";
 import Button from "../Buttons/Button";
 import Image from "next/image";
 
-import eventBanner from "@/public/assets/images/events/event_1.jpg";
+import eventBanner from "@/public/assets/images/events/event_1.png";
 import CountdownTimer from "@/app/(main)/event/CountdownTimer";
 import ContentSpacing from "../Spacing/ContentSpacing";
 import ButtonRegEvent from "../Buttons/ButtonRegEvent";
