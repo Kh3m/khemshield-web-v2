@@ -130,13 +130,13 @@ const EventSchedule = () => {
           )}
         </section>
       </section>
-      <NextPrevArrows
+      {/* <NextPrevArrows
         styles="md:hidden"
         isLast={selectedTab >= eventScheduleData.length - 1}
         isFirst={selectedTab <= 0}
         handlePrev={handlePrev}
         handleNext={handleNext}
-      />
+      /> */}
       <div className="flex items-center justify-center my-6">
         <ButtonRegEvent>Claim Your Seat</ButtonRegEvent>
       </div>
