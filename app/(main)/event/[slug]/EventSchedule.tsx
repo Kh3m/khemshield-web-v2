@@ -5,7 +5,7 @@ import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
 import EventScheduleContent from "./EventScheduleContent";
 import ScheduleButton from "./ScheduleButton";
 import { useState, useRef, useEffect } from "react";
-import { eventScheduleData } from "@/app/data/events";
+import { eventScheduleData, jidemTalks } from "@/app/data/events";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
 
 const eventSchedules = eventScheduleData;
@@ -65,17 +65,18 @@ const EventSchedule = () => {
     <div className="lg:px-10">
       <HeadingSub subheading="Explore">Event Schedule</HeadingSub>
       <ContentSpacing />
-      <div className="flex gap-2 justify-end">
+      <div className="flex gap-2 justify-end items-center">
         <ArrowLeft
           size={28}
-          className={`${selectedTab <= 0 && "text-gray-200"} my-4 w-8 h-8"`}
+          className={`${selectedTab <= 0 && "text-gray-200"} 
+          my-4 cursor-pointer`}
           onClick={handlePrev}
         />
         <ArrowRight
           size={28}
           className={`${
             selectedTab >= eventScheduleData.length - 1 && "text-gray-200"
-          } my-4 w-8 h-8"`}
+          } my-4cursor-pointer`}
           onClick={handleNext}
         />
       </div>
@@ -107,18 +108,33 @@ const EventSchedule = () => {
           className="flex transition-transform duration-500 ease-in-out has-hidden-scrollbar"
         >
           {eventSchedules.map(
-            ({ facilitator, time, curriculum, location, perks }, i) => (
-              <section key={i} className="min-w-full">
-                {/* Displaying corresponding content */}
-                <EventScheduleContent
-                  location={location}
-                  facilitator={facilitator}
-                  time={time}
-                  curriculum={curriculum}
-                  perks={perks}
-                />
-              </section>
-            )
+            ({ facilitator, time, curriculum, location, perks }, i) => {
+              let jidemTalk = undefined;
+
+              if (i === 0) {
+                jidemTalk = jidemTalks[i];
+              }
+
+              if (i === eventSchedules.length - 1) {
+                jidemTalk = jidemTalks[1];
+              }
+
+              return (
+                <section key={i} className="min-w-full">
+                  {/* Displaying corresponding content */}
+                  <EventScheduleContent
+                    eventSchedule={{
+                      location: location,
+                      facilitator: facilitator,
+                      time: time,
+                      curriculum: curriculum,
+                      perks: perks,
+                    }}
+                    jidemTalk={jidemTalk}
+                  />
+                </section>
+              );
+            }
           )}
         </section>
       </section>

@@ -1,13 +1,12 @@
-import Heading from "../Generics/Heading";
-import BaseSpacing from "../Spacing/BaseSpacing";
-import Text from "../Generics/Text";
-import Button from "../Buttons/Button";
 import Image from "next/image";
-
-import eventBanner from "@/public/assets/images/events/event_1.png";
+import Heading from "../Generics/Heading";
+import Text from "../Generics/Text";
+import BaseSpacing from "../Spacing/BaseSpacing";
 import CountdownTimer from "@/app/(main)/event/CountdownTimer";
-import ContentSpacing from "../Spacing/ContentSpacing";
 import ButtonRegEvent from "../Buttons/ButtonRegEvent";
+import ContentSpacing from "../Spacing/ContentSpacing";
+
+import eventBanner from "@/public/assets/images/events/khemshield_jidem.jpg";
 
 const EventBanner = () => {
   return (
@@ -24,11 +23,12 @@ const EventBanner = () => {
           Empowering Warriors with On-Demand Skills for Stress-Free Remote Work
         </Heading>
         <Text styles="my-6">
-          Led by industry experts, each session offers practical, hands-on
-          experience in building secure applications and defending against cyber
-          threats. This immersive training ensures that by the end, you&apos;ll
-          not only be skilled but also confident in your ability to navigate the
-          digital landscape.
+          A collaboration with the{" "}
+          <mark className="bg-transparent font-semibold">Jidem Foundation</mark>
+          , designed to enhance your skills in cybersecurity and software
+          engineering for remote work success. Led by industry experts, each
+          session offers practical, hands-on experience in building secure
+          applications and defending against cyber threats.
         </Text>
         <CountdownTimer targetDate="2024-09-24T04:00:00" />
         <ContentSpacing />
@@ -38,7 +38,7 @@ const EventBanner = () => {
         <Image
           src={eventBanner}
           alt="Banner Event"
-          className="rounded-xl w-full"
+          className="rounded-xl w-full h-[500px] object-cover"
         />
       </section>
     </section>

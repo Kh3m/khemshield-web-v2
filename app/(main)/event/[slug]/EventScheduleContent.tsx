@@ -1,48 +1,67 @@
 import Heading from "@/app/components/Generics/Heading";
+import HR from "@/app/components/Generics/HR";
 import Text from "@/app/components/Generics/Text";
 import BaseSpacing from "@/app/components/Spacing/BaseSpacing";
 import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
 import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
-import { Clock, Coffee, Location, PresentionChart } from "iconsax-react";
+import { Clock, Location, PresentionChart } from "iconsax-react";
 import Image, { StaticImageData } from "next/image";
+import { ReactNode } from "react";
 import { IoVideocamOutline } from "react-icons/io5";
 
-import HR from "@/app/components/Generics/HR";
-import { ReactNode } from "react";
+import jidem_transparent from "@/public/assets/images/events/jidem_transparent.png";
+import Dot from "../Dot";
 
 interface Props {
-  facilitator: {
-    name: string;
-    image: StaticImageData;
-  };
-  curriculum: {
-    topic: string;
-    subject: string;
-    content: string;
-  };
+  eventSchedule: {
+    facilitator: {
+      name: string;
+      image: StaticImageData;
+    };
+    curriculum: {
+      topic: string;
+      subject: string;
+      content: string;
+    };
 
-  time: {
-    from: string;
-    to: string;
+    time: {
+      from: string;
+      to: string;
+    };
+    location: string;
+    perks: { icon: string | ReactNode; title: string }[];
   };
-  location: string;
-  perks: { icon: string | ReactNode; title: string }[];
+  jidemTalk?: { subject: string; content: string };
 }
 const EventScheduleContent = ({
-  facilitator: { image, name },
-  time: { from, to },
-  curriculum: { topic, subject, content },
-  location,
-  perks,
+  eventSchedule: {
+    facilitator: { image, name },
+    time: { from, to },
+    curriculum: { topic, subject, content },
+    location,
+    perks,
+  },
+  jidemTalk,
 }: Readonly<Props>) => {
   return (
     <section className=" flex flex-col lg:flex-row">
       <aside className=" lg:px-8 lg:w-1/5">
-        <Image
-          src={image}
-          alt="Abdul Kareem"
-          className=" w-16 h-16 rounded-full object-cover"
-        />
+        <div className="flex items-center gap-4 ">
+          <Image
+            src={image}
+            alt="Abdul Kareem"
+            className="min-w-16 min-h-16 w-16 h-16 rounded-full object-cover"
+          />
+          {jidemTalk && <Dot />}
+          {jidemTalk && (
+            <Image
+              src={jidem_transparent}
+              alt="Abdul Kareem"
+              className="  object-contain"
+            />
+          )}
+        </div>
+
         <Text styles="mt-2">{name}</Text>
         <Text color="primary" styles=" text-sm">
           {topic}
@@ -84,6 +103,14 @@ const EventScheduleContent = ({
               </span>
             </div>
             <ContentSpacing />
+            {jidemTalk && (
+              <>
+                <Heading variant="h4">{jidemTalk.subject}</Heading>
+                <BaseSpacing />
+                <Text>{jidemTalk.content}</Text>
+                <BaseSpacing />
+              </>
+            )}
             <Heading variant="h4">{subject}</Heading>
             <BaseSpacing />
             <Text>{content}</Text>
