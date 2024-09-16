@@ -7,6 +7,8 @@ import ScheduleButton from "./ScheduleButton";
 import { useState, useRef, useEffect } from "react";
 import { eventScheduleData, jidemTalks } from "@/app/data/events";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
+import NextPrevArrows from "./NextPrevArrows";
+import ButtonRegEvent from "@/app/components/Buttons/ButtonRegEvent";
 
 const eventSchedules = eventScheduleData;
 
@@ -65,22 +67,12 @@ const EventSchedule = () => {
     <div className="lg:px-10">
       <HeadingSub subheading="Explore">Event Schedule</HeadingSub>
       <ContentSpacing />
-      <div className="flex gap-2 justify-end items-center">
-        <ArrowLeft
-          size={28}
-          className={`${selectedTab <= 0 && "text-gray-200"} 
-          my-4 cursor-pointer`}
-          onClick={handlePrev}
-        />
-        <ArrowRight
-          size={28}
-          className={`${
-            selectedTab >= eventScheduleData.length - 1 && "text-gray-200"
-          } my-4cursor-pointer`}
-          onClick={handleNext}
-        />
-      </div>
-
+      <NextPrevArrows
+        isLast={selectedTab >= eventScheduleData.length - 1}
+        isFirst={selectedTab <= 0}
+        handlePrev={handlePrev}
+        handleNext={handleNext}
+      />
       {/* Scrollable Schedule Button Tabs */}
       <ul
         ref={buttonListRef}
@@ -102,10 +94,10 @@ const EventSchedule = () => {
       <ContentSpacing />
 
       {/* Scrollable Event Sections */}
-      <section className="overflow-hidden relative">
+      <section className="overflow-x-hidden relative">
         <section
           ref={contentRef}
-          className="flex transition-transform duration-500 ease-in-out has-hidden-scrollbar"
+          className="flex  transition-transform duration-500 ease-in-out has-hidden-scrollbar"
         >
           {eventSchedules.map(
             ({ facilitator, time, curriculum, location, perks }, i) => {
@@ -138,6 +130,16 @@ const EventSchedule = () => {
           )}
         </section>
       </section>
+      <NextPrevArrows
+        styles="md:hidden"
+        isLast={selectedTab >= eventScheduleData.length - 1}
+        isFirst={selectedTab <= 0}
+        handlePrev={handlePrev}
+        handleNext={handleNext}
+      />
+      <div className="flex items-center justify-center my-6">
+        <ButtonRegEvent>Claim Your Seat</ButtonRegEvent>
+      </div>
     </div>
   );
 };

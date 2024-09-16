@@ -47,10 +47,6 @@ const EventDetailPage = () => {
         <EventSpeakers />
         <SectionSpacing />
         <EventSchedule />
-        <SectionSpacing />
-        <div className="flex items-center justify-center">
-          <ButtonRegEvent>Claim Your Seat</ButtonRegEvent>
-        </div>
       </Wrapper>
     </main>
   );

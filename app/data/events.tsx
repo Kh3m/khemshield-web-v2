@@ -40,7 +40,7 @@ export const eventScheduleData = [
       content: `In the "Introduction to HTML, CSS, and JavaScript" session, participants will explore the core technologies for building websites. They will start with HTML to structure web content using elements like headings, paragraphs, lists, and images. Next, they'll learn CSS to style and format the website, focusing on colors, fonts, layout, and responsiveness. Finally, JavaScript will be introduced to add interactivity, enabling dynamic elements such as buttons, form validation, and animations. By the end of the session, attendees will understand how these three technologies work together to create functional, interactive, and visually appealing websites.`,
     },
     time: {
-      from: "04:00PM",
+      from: "04PM",
       to: "06:30PM",
     },
     location: "Zoom",
@@ -63,8 +63,8 @@ export const eventScheduleData = [
         'In the "Building a Basic Website using HTML and CSS" session, participants will learn the foundational skills for web development. The course will cover structuring a webpage with HTML by utilizing elements such as headings, paragraphs, images, and links. Participants will also explore CSS to style and enhance the visual appeal of their webpage, focusing on layout, typography, colors, and responsive design principles. By the end of the session, attendees will have created a fully functional, visually appealing website using these fundamental technologies.',
     },
     time: {
-      from: "04:00PM",
-      to: "06:00PM",
+      from: "04PM",
+      to: "06PM",
     },
     location: "Zoom",
     perks: [
@@ -87,8 +87,8 @@ export const eventScheduleData = [
     },
 
     time: {
-      from: "04PM:00PM",
-      to: "06PM:00PM",
+      from: "04PM",
+      to: "06PM",
     },
     location: "Zoom",
     perks: [
@@ -113,8 +113,8 @@ export const eventScheduleData = [
     },
 
     time: {
-      from: "06PM:00PM",
-      to: "08PM:00PM",
+      from: "06PM",
+      to: "08PM",
     },
     location: "Zoom",
     perks: [
@@ -137,8 +137,8 @@ export const eventScheduleData = [
         "In this session, participants will explore key principles of web application security. They will be introduced to the OWASP Top 10, a widely recognized list of the most critical security risks to web applications, including issues like SQL injection and cross-site scripting (XSS). The session will also focus on secure coding practices, teaching attendees how to write code that minimizes vulnerabilities and adheres to security best practices. By the end of the session, participants will understand how to protect web applications from common threats and build secure, robust systems.",
     },
     time: {
-      from: "04PM:00PM",
-      to: "06PM:00PM",
+      from: "04PM",
+      to: "06PM",
     },
     location: "Zoom",
     perks: [
@@ -160,8 +160,8 @@ export const eventScheduleData = [
         "This session introduces the basics of penetration testing and ethical hacking, focusing on simulating cyberattacks to identify and exploit vulnerabilities in systems. Participants will learn about various tools and techniques used in ethical hacking, such as network scanning, vulnerability assessment, and exploiting security gaps. The session will also cover the ethical and legal frameworks guiding penetration testers, ensuring that attendees understand how to responsibly use their skills to improve system security. By the end of the session, participants will have a foundational understanding of how ethical hackers help organizations strengthen their defenses against cyberattacks.",
     },
     time: {
-      from: "04PM:00PM",
-      to: "06PM:00PM",
+      from: "04PM",
+      to: "06PM",
     },
     location: "Zoom",
     perks: [
@@ -183,8 +183,8 @@ export const eventScheduleData = [
         "This session serves as the culmination of the training, where participants will have the opportunity to share their personalized experiences, challenges, and successes throughout the program. Attendees will get to meet and engage with fellow 'warriors,' exchange ideas, and reflect on the key takeaways from the sessions. The event will conclude with the formal distribution of certificates, recognizing the commitment and achievements of all participants.",
     },
     time: {
-      from: "04PM:00PM",
-      to: "06PM:30PM",
+      from: "04PM",
+      to: "06:30PM",
     },
     location: "Abuja, Nigeria.",
     perks: [
