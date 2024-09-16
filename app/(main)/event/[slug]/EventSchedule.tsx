@@ -67,10 +67,12 @@ const EventSchedule = () => {
       <ContentSpacing />
       <div className="flex gap-2 justify-end">
         <ArrowLeft
+          size={28}
           className={`${selectedTab <= 0 && "text-gray-200"} my-4 w-8 h-8"`}
           onClick={handlePrev}
         />
         <ArrowRight
+          size={28}
           className={`${
             selectedTab >= eventScheduleData.length - 1 && "text-gray-200"
           } my-4 w-8 h-8"`}

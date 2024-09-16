@@ -115,8 +115,8 @@ const EventRegistration: React.FC = () => {
     description:
       "Join us for a two-week virtual training program to learn in-demand web development and cybersecurity skills.",
     location: "Online",
-    startTime: "20240919T120000Z", // Start time in UTC (YYYYMMDDTHHmmssZ)
-    endTime: "20240919T133000Z", // End time in UTC
+    startTime: "20240917T120000Z", // Start time in UTC (YYYYMMDDTHHmmssZ)
+    endTime: "20240917T133000Z", // End time in UTC
   };
 
   const googleCalendarLink = generateGoogleCalendarLink(eventDetails);
