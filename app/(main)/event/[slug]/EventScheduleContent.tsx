@@ -46,7 +46,7 @@ const EventScheduleContent = ({
   return (
     <section className=" flex flex-col lg:flex-row">
       <aside className=" lg:px-8 lg:w-1/5 ">
-        <div className="flex  ">
+        <div className="flex items-center gap-4">
           <Image
             src={image}
             alt="Abdul Kareem"
