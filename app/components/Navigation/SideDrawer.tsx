@@ -1,7 +1,7 @@
 "use client";
 
 import useSideDrawerStore from "@/app/store/side-drawer";
-import { CloseSquare } from "iconsax-react";
+import { Add, CloseSquare } from "iconsax-react";
 import { ReactNode } from "react";
 import NavLink from "./NavLink";
 import RequestQuoteButton from "../Buttons/RequestQuoteButton";
@@ -27,11 +27,7 @@ const SideDrawer = ({ items }: Readonly<Props>) => {
       >
         <section className="p-8">
           <header className="flex justify-end">
-            <CloseSquare
-              onClick={handleClose}
-              className=" text-secondary-normal"
-              variant="Bulk"
-            />
+            <Add size={32} onClick={handleClose} className=" rotate-45" />
           </header>
           <ul>
             {items.map(({ href, text }) => (
