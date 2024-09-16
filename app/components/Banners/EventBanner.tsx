@@ -38,7 +38,8 @@ const EventBanner = () => {
         <Image
           src={eventBanner}
           alt="Banner Event"
-          className="rounded-xl w-full h-[500px] object-cover"
+          className="rounded-xl w-full object-cover
+          lg:h-[460px] "
         />
       </section>
     </section>
