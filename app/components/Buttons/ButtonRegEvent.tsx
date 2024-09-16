@@ -66,7 +66,8 @@ const ButtonRegEvent = ({ children }: Readonly<PropsWithChildren>) => {
             <Text>
               Thank you for your interest in our Web Development and
               Cybersecurity Training Program. Registration for this exciting
-              event begins on Tuesday, so be sure to mark your calendar!
+              event begins on <span className="font-semibold">Thursday</span>,
+              so be sure to mark your calendar!
             </Text>
             <ContentSpacing />
             <div onClick={handleCloseDialog} className="mb-8">
@@ -115,8 +116,8 @@ const EventRegistration: React.FC = () => {
     description:
       "Join us for a two-week virtual training program to learn in-demand web development and cybersecurity skills.",
     location: "Online",
-    startTime: "20240917T120000Z", // Start time in UTC (YYYYMMDDTHHmmssZ)
-    endTime: "20240917T133000Z", // End time in UTC
+    startTime: "20240918T120000Z", // Start time in UTC (YYYYMMDDTHHmmssZ)
+    endTime: "20240918T133000Z", // End time in UTC
   };
 
   const googleCalendarLink = generateGoogleCalendarLink(eventDetails);

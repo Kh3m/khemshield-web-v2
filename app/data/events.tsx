@@ -58,7 +58,7 @@ export const eventScheduleData = [
     },
     curriculum: {
       topic: "Web Development",
-      subject: "Building a basic website using HTML and CSS",
+      subject: "Building a basic website using HTML and CSS",
       content:
         'In the "Building a Basic Website using HTML and CSS" session, participants will learn the foundational skills for web development. The course will cover structuring a webpage with HTML by utilizing elements such as headings, paragraphs, images, and links. Participants will also explore CSS to style and enhance the visual appeal of their webpage, focusing on layout, typography, colors, and responsive design principles. By the end of the session, attendees will have created a fully functional, visually appealing website using these fundamental technologies.',
     },
