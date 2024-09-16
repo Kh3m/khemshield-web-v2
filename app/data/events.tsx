@@ -298,11 +298,11 @@ export const eventSpeakersData: SpeakerType[] = [
     ],
     eventRole: "Facilitator",
     role: "Fullstack Webdeveloper",
-    company: "DooTech",
+    company: "Digital Cloud Solutions Ltd.",
   },
   {
     image: hafsat,
-    name: "Hafsat Rabi’u Haruna",
+    name: "Hafsat Rabiu Haruna",
     description: `Chevening Alumnus, MSc in Cybersecurity & Forensics, Ethical Hacker, Cybersecurity Professional, 
     Copywriter, and Award-winning Techpreneur.`,
     socials: [
