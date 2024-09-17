@@ -38,14 +38,22 @@ const EventSchedule = () => {
   };
 
   const handleNext = () => {
+    console.log("CURRENT SELECTED TAB IS: ", selectedTab);
     if (selectedTab < eventSchedules.length - 1) {
-      setSelectedTab((prev) => prev + 1);
+      setSelectedTab((prev) => {
+        console.log("PREV SELECTED TAB IS: ", prev);
+
+        return prev + 1;
+      });
 
       const buttonListElement = buttonListRef.current;
       if (buttonListElement) {
         const buttonWidth =
           buttonListElement.scrollWidth / eventSchedules.length;
-        buttonListElement.scrollBy({ left: buttonWidth, behavior: "smooth" });
+        buttonListElement.scrollBy({
+          left: buttonWidth,
+          behavior: "smooth",
+        });
       }
     }
   };

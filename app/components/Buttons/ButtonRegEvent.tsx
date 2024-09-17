@@ -77,11 +77,12 @@ const ButtonRegEvent = ({ children }: Readonly<PropsWithChildren>) => {
         </section>
       </dialog>
 
-      {/* Button to Show Dialog */}
       <Button
-        onClick={handleShowDialog}
+        // onClick={handleShowDialog}
         variant="primary"
         styles="text-xs md:text-sm lg:text-base py-4 lg:py-2"
+        elementType="link"
+        href="/event/1/register"
       >
         {children}
       </Button>
