@@ -12,11 +12,20 @@ export const metadata: Metadata = {
       "Register for Empowerment Series 2024: Advance Your Cybersecurity and Software Engineering Skills",
     description: `Join the Empowerment Series 2024, a two-week training event by Khemshield and Jidem Foundation. Gain practical skills in cybersecurity and software engineering to excel in remote work environments. Secure your spot today!`,
     type: "website",
+    images: [
+      {
+        url: "/assets/images/events/khemshield_jidem.jpg", // Make sure the path is correct
+        width: 800,
+        height: 600,
+        alt: "Khemshield Events Image",
+      },
+    ],
   },
   twitter: {
     title:
       "Register for Empowerment Series 2024: Advance Your Cybersecurity and Software Engineering Skills",
     description: `Join the Empowerment Series 2024, a two-week training event by Khemshield and Jidem Foundation. Gain practical skills in cybersecurity and software engineering to excel in remote work environments. Secure your spot today!`,
+    images: ["/assets/images/events/khemshield_jidem.jpg"], // Path to the image
   },
 };
 

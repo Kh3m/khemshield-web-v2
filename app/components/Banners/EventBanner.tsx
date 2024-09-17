@@ -5,7 +5,6 @@ import BaseSpacing from "../Spacing/BaseSpacing";
 import CountdownTimer from "@/app/(main)/event/CountdownTimer";
 import ButtonRegEvent from "../Buttons/ButtonRegEvent";
 import ContentSpacing from "../Spacing/ContentSpacing";
-
 import eventBanner from "@/public/assets/images/events/khemshield_jidem.jpg";
 
 const EventBanner = () => {
@@ -19,7 +18,7 @@ const EventBanner = () => {
           Virtual Training in Web Development and Cybersecurity
         </p>
         <BaseSpacing />
-        <Heading variant="h2">
+        <Heading variant="h2" styles="lg:text-xl xl:text-[2.5rem]/[3rem]">
           Empowering Warriors with On-Demand Skills for Stress-Free Remote Work
         </Heading>
         <Text styles="my-6">
@@ -39,7 +38,7 @@ const EventBanner = () => {
           src={eventBanner}
           alt="Banner Event"
           className="rounded-xl w-full object-cover
-          lg:h-[460px] "
+          xl:h-[460px] "
         />
       </section>
     </section>
