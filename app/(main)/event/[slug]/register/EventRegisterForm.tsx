@@ -22,31 +22,39 @@ const EventRegisterForm = () => {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    if (state && state.message) {
-      if (state.message.toLowerCase() !== "ok") {
-        toast.error(state.message, { position: "top-center" });
-        // Set the error state to true to trigger the reset
-        setHasError(true);
-      }
+    try {
+      if (state && state.message) {
+        if (state.message.toLowerCase() !== "ok") {
+          toast.error(state.message, { position: "top-center" });
+          // Set the error state to true to trigger the reset
+          setHasError(true);
+        }
 
-      if (state.message.toLowerCase() === "ok") {
-        toast.success(
-          `Thank you for registering for the Virtual Training in Web Development and Cybersecurity!`,
-          {
-            position: "top-center",
-            duration: 5000,
-          }
-        );
-        router.replace("/event/1");
+        if (state.message.toLowerCase() === "ok") {
+          toast.success(
+            `Thank you for registering for the Virtual Training in Web Development and Cybersecurity!`,
+            {
+              position: "top-center",
+              duration: 5000,
+            }
+          );
+          router.replace("/event/1");
+        }
       }
+    } catch (error) {
+      console.log("EventRegisterForm message", error);
     }
   }, [state.message]);
 
   useEffect(() => {
-    if (hasError) {
-      // Reset the message after showing the error
-      state.message = "";
-      setHasError(false);
+    try {
+      if (hasError) {
+        // Reset the message after showing the error
+        state.message = "";
+        setHasError(false);
+      }
+    } catch (error) {
+      console.log("EventRegisterForm hasError", error);
     }
   }, [hasError, state]);
 
