@@ -132,6 +132,18 @@ const EventSchedule = () => {
                     }}
                     jidemTalk={jidemTalk}
                   />
+                  <div>
+                    <NextPrevArrows
+                      styles=" lg:hidden"
+                      isLast={selectedTab >= eventScheduleData.length - 1}
+                      isFirst={selectedTab <= 0}
+                      handlePrev={handlePrev}
+                      handleNext={handleNext}
+                    />
+                    <div className="flex items-center justify-center my-8">
+                      <ButtonRegEvent>Claim Your Seat</ButtonRegEvent>
+                    </div>
+                  </div>
                 </section>
               );
             }
@@ -145,9 +157,6 @@ const EventSchedule = () => {
         handlePrev={handlePrev}
         handleNext={handleNext}
       /> */}
-      <div className="flex items-center justify-center my-6">
-        <ButtonRegEvent>Claim Your Seat</ButtonRegEvent>
-      </div>
     </div>
   );
 };

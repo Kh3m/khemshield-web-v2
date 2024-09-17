@@ -6,7 +6,7 @@ import FormInputGroup from "@/app/components/Inputs/FormInputGroup";
 import GroupInput from "@/app/components/Inputs/GroupInput";
 import BaseSpacing from "@/app/components/Spacing/BaseSpacing";
 import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
-import EventRegisterSubmit from "./EventRegisterSubmit";
+import FormSubmitButton from "../../../../components/Buttons/FormSubmitButton";
 import { useFormState } from "react-dom";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -91,7 +91,7 @@ const EventRegisterForm = () => {
         </GroupInput> */}
       </FormInputGroup>
       <ContentSpacing />
-      <EventRegisterSubmit />
+      <FormSubmitButton>Register</FormSubmitButton>
     </form>
   );
 };
