@@ -22,21 +22,23 @@ const EventRegisterForm = () => {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    if (state.message && state.message.toLowerCase() !== "ok") {
-      toast.error(state.message, { position: "top-center" });
-      // Set the error state to true to trigger the reset
-      setHasError(true);
-    }
+    if (state && state.message) {
+      if (state.message.toLowerCase() !== "ok") {
+        toast.error(state.message, { position: "top-center" });
+        // Set the error state to true to trigger the reset
+        setHasError(true);
+      }
 
-    if (state.message.toLowerCase() === "ok") {
-      toast.success(
-        `Thank you for registering for the Virtual Training in Web Development and Cybersecurity!`,
-        {
-          position: "top-center",
-          duration: 5000,
-        }
-      );
-      router.replace("/event/1");
+      if (state.message.toLowerCase() === "ok") {
+        toast.success(
+          `Thank you for registering for the Virtual Training in Web Development and Cybersecurity!`,
+          {
+            position: "top-center",
+            duration: 5000,
+          }
+        );
+        router.replace("/event/1");
+      }
     }
   }, [state.message]);
 
