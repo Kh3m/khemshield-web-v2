@@ -52,8 +52,9 @@ const SideDrawer = ({ items }: Readonly<Props>) => {
           </ul>
         </section>
         <section className="grid grid-cols-2 p-8 gap-2">
-          {chafEvents.map((image) => (
+          {chafEvents.map((image, i) => (
             <Image
+              key={i}
               src={image}
               alt="Latest Event"
               className=" rounded-xl h-full w-full object-cover"
