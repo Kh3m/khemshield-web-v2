@@ -116,7 +116,11 @@ const EventPage = () => {
             <BaseSpacing />
             <CountdownTimer targetDate="2024-09-24T04:00:00" />
             <ContentSpacing />
-            <Button variant="primary" elementType="link" href="/event/1">
+            <Button
+              variant="primary"
+              elementType="link"
+              href="/event/virtual-training-web-development-cybersecurity"
+            >
               Learn More
             </Button>
           </section>

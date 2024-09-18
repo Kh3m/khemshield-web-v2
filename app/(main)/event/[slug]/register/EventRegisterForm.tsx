@@ -18,43 +18,30 @@ const EventRegisterForm = () => {
   const [state, eventRegisterActionForm] = useFormState(eventRegisterAction, {
     message: "",
   });
-  // Local state to manually reset the message
   const [hasError, setHasError] = useState(false);
 
+  // Local state to manually reset the message
   useEffect(() => {
-    try {
-      if (state && state.message) {
-        if (state.message.toLowerCase() !== "ok") {
-          toast.error(state.message, { position: "top-center" });
-          // Set the error state to true to trigger the reset
-          setHasError(true);
-        }
-
-        if (state.message.toLowerCase() === "ok") {
-          toast.success(
-            `Thank you for registering for the Virtual Training in Web Development and Cybersecurity!`,
-            {
-              position: "top-center",
-              duration: 5000,
-            }
-          );
-          router.replace("/event/1");
-        }
+    if (state?.message) {
+      // Safely check if state and message exist
+      if (state.message.toLowerCase() !== "ok") {
+        toast.error(state.message, { position: "top-center" });
+        setHasError(true);
+      } else if (state.message.toLowerCase() === "ok") {
+        toast.success(
+          `Thank you for registering for the Virtual Training in Web Development and Cybersecurity!`,
+          { position: "top-center", duration: 5000 }
+        );
+        router.replace("/event/1");
       }
-    } catch (error) {
-      console.log("EventRegisterForm message", error);
     }
-  }, [state.message]);
+  }, [state?.message]);
 
   useEffect(() => {
-    try {
-      if (hasError) {
-        // Reset the message after showing the error
-        state.message = "";
-        setHasError(false);
-      }
-    } catch (error) {
-      console.log("EventRegisterForm hasError", error);
+    if (hasError) {
+      // Reset the message after showing the error
+      if (state?.message) state.message = "";
+      setHasError(false);
     }
   }, [hasError, state]);
 
