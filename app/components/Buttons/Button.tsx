@@ -32,7 +32,8 @@ const Button = ({
 }: Readonly<Props>) => {
   const baseStyle = `${styles} ${
     full && "w-full"
-  } py-2 px-3 rounded-md font-semibold`;
+  } py-2 px-3 rounded-md font-semibold
+  disabled:bg-gray-400 disabled:text-secondary-normal`;
 
   const btnStyle: { [key in ButtonVariantType]: string } = {
     primary: "bg-primary-normal text-white",

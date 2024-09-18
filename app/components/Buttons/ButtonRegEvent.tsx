@@ -77,11 +77,12 @@ const ButtonRegEvent = ({ children }: Readonly<PropsWithChildren>) => {
         </section>
       </dialog>
 
-      {/* Button to Show Dialog */}
       <Button
-        onClick={handleShowDialog}
+        // onClick={handleShowDialog}
         variant="primary"
         styles="text-xs md:text-sm lg:text-base py-4 lg:py-2"
+        elementType="link"
+        href={`/event/${eventSlug}/register`}
       >
         {children}
       </Button>
@@ -109,6 +110,7 @@ const generateGoogleCalendarLink = (eventDetails: {
 
 import React from "react";
 import ContentSpacing from "../Spacing/ContentSpacing";
+import { eventSlug } from "@/app/(main)/event/eventSlug";
 
 const EventRegistration: React.FC = () => {
   const eventDetails = {

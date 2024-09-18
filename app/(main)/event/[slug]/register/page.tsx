@@ -1,11 +1,33 @@
-import Button from "@/app/components/Buttons/Button";
 import Breadcrumb from "@/app/components/Generics/Breadcrumb";
-import FormInput from "@/app/components/Inputs/FormInput";
-import FormInputGroup from "@/app/components/Inputs/FormInputGroup";
-import GroupInput from "@/app/components/Inputs/GroupInput";
-import BaseSpacing from "@/app/components/Spacing/BaseSpacing";
-import ContentSpacing from "@/app/components/Spacing/ContentSpacing";
 import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
+import EventRegisterForm from "./EventRegisterForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Register for Empowerment Series 2024: Advance Your Cybersecurity and Software Engineering Skills",
+  description: `Join the Empowerment Series 2024, a two-week training event by Khemshield and Jidem Foundation. Gain practical skills in cybersecurity and software engineering to excel in remote work environments. Secure your spot today!`,
+  openGraph: {
+    title:
+      "Register for Empowerment Series 2024: Advance Your Cybersecurity and Software Engineering Skills",
+    description: `Join the Empowerment Series 2024, a two-week training event by Khemshield and Jidem Foundation. Gain practical skills in cybersecurity and software engineering to excel in remote work environments. Secure your spot today!`,
+    type: "website",
+    images: [
+      {
+        url: "/assets/images/events/khemshield_jidem.jpg", // Make sure the path is correct
+        width: 800,
+        height: 600,
+        alt: "Khemshield Events Image",
+      },
+    ],
+  },
+  twitter: {
+    title:
+      "Register for Empowerment Series 2024: Advance Your Cybersecurity and Software Engineering Skills",
+    description: `Join the Empowerment Series 2024, a two-week training event by Khemshield and Jidem Foundation. Gain practical skills in cybersecurity and software engineering to excel in remote work environments. Secure your spot today!`,
+    images: ["/assets/images/events/khemshield_jidem.jpg"], // Path to the image
+  },
+};
 
 const page = () => {
   return (
@@ -13,38 +35,23 @@ const page = () => {
       <Breadcrumb
         crumbs={[
           {
-            text: "Event Registeration",
+            text: "Event",
+            href: "/event",
+          },
+          {
+            text: "Web Development and Cybersecurity",
+            href: "/event/1",
+          },
+          {
+            text: "Register",
             href: "",
           },
         ]}
-        heading="Web Development and Cybersecurity"
+        heading=""
       />
       <SectionSpacing />
       <section className=" max-w-[620px] m-auto px-4">
-        <form action="">
-          <FormInputGroup heading={"Contact Information"}>
-            <GroupInput>
-              <FormInput variant="email" />
-              <FormInput variant="phone" />
-            </GroupInput>
-            <BaseSpacing />
-            <GroupInput>
-              <FormInput variant="name" placeholder="Enter your first name" />
-              <FormInput variant="name" placeholder="Enter your last name" />
-            </GroupInput>
-            <BaseSpacing />
-            <FormInput variant="address" />
-            <BaseSpacing />
-            <GroupInput>
-              <FormInput variant="address_select" placeholder="State" />
-              <FormInput variant="address_select" placeholder="City" />
-            </GroupInput>
-          </FormInputGroup>
-          <ContentSpacing />
-          <Button variant="primary" full>
-            Register
-          </Button>
-        </form>
+        <EventRegisterForm />
       </section>
     </section>
   );

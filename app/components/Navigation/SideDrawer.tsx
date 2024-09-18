@@ -1,14 +1,24 @@
 "use client";
 
 import useSideDrawerStore from "@/app/store/side-drawer";
-import { Add, CloseSquare } from "iconsax-react";
+import { Add } from "iconsax-react";
 import { ReactNode } from "react";
-import NavLink from "./NavLink";
 import RequestQuoteButton from "../Buttons/RequestQuoteButton";
+import NavLink from "./NavLink";
+import Image from "next/image";
+
+import chaf_event_1 from "@/public/assets/images/events/chaf_event_1.jpg";
+import chaf_event_2 from "@/public/assets/images/events/chaf_event_2.jpg";
+import chaf_event_3 from "@/public/assets/images/events/chaf_event_3.jpg";
+import chaf_event_4 from "@/public/assets/images/events/chaf_event_4.jpg";
+import Socials from "../Footer/Socials";
+import { defaultSocials } from "../Footer/FooterAbout";
 
 interface Props {
   items: { text: string; href: string; icon: ReactNode }[];
 }
+
+const chafEvents = [chaf_event_1, chaf_event_2, chaf_event_3, chaf_event_4];
 
 const SideDrawer = ({ items }: Readonly<Props>) => {
   const { handleClose, open } = useSideDrawerStore();
@@ -43,6 +53,20 @@ const SideDrawer = ({ items }: Readonly<Props>) => {
             </li>
           </ul>
         </section>
+        {/* <section className="grid grid-cols-2 p-8 gap-2">
+          {chafEvents.map((image, i) => (
+            <Image
+              key={i}
+              src={image}
+              alt="Latest Event"
+              className=" rounded-xl h-full w-full object-cover"
+            />
+          ))}
+        </section> */}
+
+        <div className="flex items-center justify-center">
+          <Socials socials={defaultSocials} />
+        </div>
       </nav>
     </div>
   );

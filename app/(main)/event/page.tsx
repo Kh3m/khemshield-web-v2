@@ -15,6 +15,7 @@ import Dot from "./Dot";
 import StackedImages from "./StackedImages";
 import { speakersImagesData } from "@/app/data/events";
 import { Metadata } from "next";
+import { eventSlug } from "./eventSlug";
 
 export const metadata: Metadata = {
   title: "Khemshield | Events",
@@ -116,7 +117,11 @@ const EventPage = () => {
             <BaseSpacing />
             <CountdownTimer targetDate="2024-09-24T04:00:00" />
             <ContentSpacing />
-            <Button variant="primary" elementType="link" href="/event/1">
+            <Button
+              variant="primary"
+              elementType="link"
+              href={`/event/${eventSlug}`}
+            >
               Learn More
             </Button>
           </section>

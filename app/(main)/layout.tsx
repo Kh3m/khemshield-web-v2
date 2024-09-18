@@ -8,6 +8,7 @@ import TopNav from "../components/Navigation/TopNav";
 import ContentSpacing from "../components/Spacing/ContentSpacing";
 import SectionSpacing from "../components/Spacing/SectionSpacing";
 import SideDrawerItems from "./SideDrawerItems";
+import { Toaster } from "sonner";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function MainLayout({
   return (
     <html lang="en">
       <body className={jost.className}>
+        <Toaster richColors />
         <TopElement />
         <ButtonTop />
         <SideDrawerItems />
