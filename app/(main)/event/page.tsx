@@ -15,6 +15,7 @@ import Dot from "./Dot";
 import StackedImages from "./StackedImages";
 import { speakersImagesData } from "@/app/data/events";
 import { Metadata } from "next";
+import { eventSlug } from "./eventSlug";
 
 export const metadata: Metadata = {
   title: "Khemshield | Events",
@@ -119,7 +120,7 @@ const EventPage = () => {
             <Button
               variant="primary"
               elementType="link"
-              href="/event/virtual-training-web-development-cybersecurity"
+              href={`/event/${eventSlug}`}
             >
               Learn More
             </Button>
