@@ -53,7 +53,7 @@ const SideDrawer = ({ items }: Readonly<Props>) => {
             </li>
           </ul>
         </section>
-        <section className="grid grid-cols-2 p-8 gap-2">
+        {/* <section className="grid grid-cols-2 p-8 gap-2">
           {chafEvents.map((image, i) => (
             <Image
               key={i}
@@ -62,7 +62,7 @@ const SideDrawer = ({ items }: Readonly<Props>) => {
               className=" rounded-xl h-full w-full object-cover"
             />
           ))}
-        </section>
+        </section> */}
 
         <div className="flex items-center justify-center">
           <Socials socials={defaultSocials} />
