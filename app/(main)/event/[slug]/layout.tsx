@@ -40,8 +40,6 @@ const EventDetailLayout = ({
   const normalizedSlug = slug.toLowerCase();
   const normalizedEventSlug = eventSlug?.toLowerCase(); // Ensure eventSlug is defined
 
-  console.log("SLUG", normalizedSlug, normalizedEventSlug);
-
   if (!normalizedEventSlug || normalizedSlug !== normalizedEventSlug) {
     return notFound();
   }
