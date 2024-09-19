@@ -11,6 +11,7 @@ import { useFormState } from "react-dom";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { eventSlug } from "../../eventSlug";
 
 const EventRegisterForm = () => {
   const router = useRouter();
@@ -33,7 +34,7 @@ const EventRegisterForm = () => {
           An email with event details has been sent to you.`,
           { position: "top-center", duration: 5000 }
         );
-        router.replace("/event/1");
+        router.replace(`/event/${eventSlug}`);
       }
     }
   }, [state?.message]);
