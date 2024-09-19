@@ -19,7 +19,7 @@ export const eventRegisterAction = async (
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
     address: Joi.string().optional(),
-    // state: Joi.string().optional(),
+    state: Joi.string().optional(),
     // city: Joi.string().optional(),
     event: Joi.string().required(),
   });
@@ -37,7 +37,7 @@ export const eventRegisterAction = async (
     firstName: formData.get("firstName"),
     lastName: formData.get("lastName"),
     address: formData.get("address"),
-    // state: formData.get("state"),
+    state: formData.get("state"),
     // city: formData.get("city"),
     event: "1",
   });
@@ -56,7 +56,8 @@ export const eventRegisterAction = async (
         eventRegister(regData: {
           event: "${value.event}", email: "${value.email}",
           phone: "${value.phone}", firstName: "${value.firstName}",
-          lastName: "${value.lastName}", address: "${value.address}"
+          lastName: "${value.lastName}", state: "${value.state}",
+          address: "${value.address}"
         }) {
           email
         }
@@ -77,7 +78,7 @@ export const eventRegisterAction = async (
 
   const postData = await postDataRes.json();
 
-  console.log("postData", postData);
+  console.log("postData graphqlMutation: ", postData);
 
   if (postData.errors) {
     return {

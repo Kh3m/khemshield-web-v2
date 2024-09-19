@@ -29,7 +29,8 @@ const EventRegisterForm = () => {
         setHasError(true);
       } else if (state.message.toLowerCase() === "ok") {
         toast.success(
-          `Thank you for registering for the Virtual Training in Web Development and Cybersecurity!`,
+          `Thank you for registering for the Virtual Training in Web Development and Cybersecurity. 
+          An email with event details has been sent to you.`,
           { position: "top-center", duration: 5000 }
         );
         router.replace("/event/1");
@@ -66,8 +67,14 @@ const EventRegisterForm = () => {
           />
         </GroupInput>
         <BaseSpacing />
-        <FormInput variant="address" name="address" />
-        <BaseSpacing />
+        <GroupInput>
+          <FormInput variant="address" name="address" />
+          <FormInput
+            variant="address_select"
+            name="state"
+            placeholder="State"
+          />
+        </GroupInput>
         {/* <GroupInput>
           <FormInput
             variant="address_select"
