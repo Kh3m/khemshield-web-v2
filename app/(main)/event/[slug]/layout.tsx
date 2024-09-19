@@ -1,5 +1,7 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import React, { PropsWithChildren } from "react";
+import { eventSlug } from "../eventSlug";
 
 export const metadata: Metadata = {
   title:
@@ -28,7 +30,22 @@ export const metadata: Metadata = {
   },
 };
 
-const EventDetailLayout = ({ children }: Readonly<PropsWithChildren>) => {
+interface Props {
+  params: { slug: string };
+}
+const EventDetailLayout = ({
+  children,
+  params: { slug },
+}: Readonly<PropsWithChildren<Props>>) => {
+  const normalizedSlug = slug.toLowerCase();
+  const normalizedEventSlug = eventSlug?.toLowerCase(); // Ensure eventSlug is defined
+
+  console.log("SLUG", normalizedSlug, normalizedEventSlug);
+
+  if (!normalizedEventSlug || normalizedSlug !== normalizedEventSlug) {
+    return notFound();
+  }
+
   return <main>{children}</main>;
 };
 

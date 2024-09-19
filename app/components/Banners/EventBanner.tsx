@@ -11,7 +11,7 @@ const EventBanner = () => {
   return (
     <section
       className="flex flex-col justify-between gap-24
-    lg:flex-row"
+      lg:flex-row"
     >
       <section className="lg:w-1/2 lg:pr-6">
         <p className=" text-primary-normal font-semibold">

@@ -2,6 +2,7 @@ import Breadcrumb from "@/app/components/Generics/Breadcrumb";
 import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
 import EventRegisterForm from "./EventRegisterForm";
 import { Metadata } from "next";
+import { eventSlug } from "../../eventSlug";
 
 export const metadata: Metadata = {
   title:
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const EventRegistrationPage = () => {
   return (
     <section>
       <Breadcrumb
@@ -40,7 +41,7 @@ const page = () => {
           },
           {
             text: "Web Development and Cybersecurity",
-            href: "/event/1",
+            href: `/event/${eventSlug}`,
           },
           {
             text: "Register",
@@ -57,4 +58,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default EventRegistrationPage;
