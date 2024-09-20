@@ -126,8 +126,8 @@ export const eventScheduleData = [
     day: "Fifth Day",
     date: "3rd October 2024",
     facilitator: {
-      image: saud,
-      name: "Saud Adam",
+      image: felix,
+      name: "Felix Fomengia",
     },
     curriculum: {
       topic: "Cybersecurity",
@@ -150,8 +150,8 @@ export const eventScheduleData = [
     day: "Sixth Day",
     date: "5th October 2024",
     facilitator: {
-      image: felix,
-      name: "Felix Fomengia",
+      image: saud,
+      name: "Saud Adam",
     },
     curriculum: {
       topic: "Cybersecurity",
