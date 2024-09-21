@@ -5,13 +5,14 @@ import instagram from "@/public/assets/images/instagram.png";
 import { SocialType } from "@/app/components/Footer/Socials";
 import { StaticImageData } from "next/image";
 
-import abdulkareem from "@/public/assets/images/events/abdulkareem.jpeg";
-import ahmedoo from "@/public/assets/images/events/ahmedoo.jpg";
-import jonathan from "@/public/assets/images/events/jonathan.jpeg";
-import felix from "@/public/assets/images/events/felix.jpg";
-import saud from "@/public/assets/images/events/saud.jpeg";
+import ik from "@/public/assets/images/events/ik_4.png";
+import ahmedoo from "@/public/assets/images/events/ahmedoo.png";
+import abdulkareem from "@/public/assets/images/events/abdulkareem.png";
+import jonathan from "@/public/assets/images/events/jonathan.png";
+import felix from "@/public/assets/images/events/felix.png";
+import saud from "@/public/assets/images/events/saud.png";
 import elon from "@/public/assets/images/events/elon.jpg";
-import hafsat from "@/public/assets/images/events/hafsat.jpg";
+import hafsat from "@/public/assets/images/events/hafsat.png";
 
 export const jidemTalks = [
   {
@@ -31,8 +32,8 @@ export const eventScheduleData = [
     day: "First Day",
     date: "24th September 2024",
     facilitator: {
-      image: abdulkareem,
-      name: "Abdul Kareem Adamu",
+      image: ik,
+      name: "Ikechukwu Chukwu",
     },
     curriculum: {
       topic: "Web Development",
