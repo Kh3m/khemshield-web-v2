@@ -21,8 +21,8 @@ const EventFooter = () => {
     xl:max-w-[250px]"
     >
       <ul className=" grid grid-cols-2 gap-2">
-        {eventsChafImages.map((image) => (
-          <li>
+        {eventsChafImages.map((image, i) => (
+          <li key={i}>
             <Image src={image} alt="Events" className=" rounded-lg" />
           </li>
         ))}
