@@ -4,6 +4,7 @@ import Heading from "@/app/components/Generics/Heading";
 import Text from "@/app/components/Generics/Text";
 import { formatNumber } from "@/app/lib/formatNumber";
 import React, { useState, useEffect, useRef } from "react";
+import EventOngoing from "./EventOngoing";
 
 // Define the types for the props
 interface CountdownTimerProps {
@@ -20,6 +21,7 @@ interface TimeLeft {
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   const calculateTimeLeft = (): TimeLeft => {
+    // "2024-09-24T16:00:00"
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {
       days: 0,
@@ -47,12 +49,19 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     minutes: 0,
     seconds: 0,
   });
+
   const hasMounted = useRef(false);
 
   useEffect(() => {
     hasMounted.current = true; // Set the mounted flag to true once the component is mounted
     setTimeLeft(calculateTimeLeft()); // Initialize time left once component is mounted
   }, []);
+
+  const timeElapsed =
+    timeLeft.days <= 0 &&
+    timeLeft.hours <= 0 &&
+    timeLeft.minutes <= 0 &&
+    timeLeft.seconds <= 0;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -62,9 +71,14 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
       }
     }, 1000);
 
+    if (timeElapsed) {
+      clearTimeout(timer);
+    }
     // Clear timeout if the component is unmounted
     return () => clearTimeout(timer);
   }, [timeLeft]);
+
+  if (timeElapsed) return <EventOngoing />;
 
   return (
     <div className="flex gap-4">

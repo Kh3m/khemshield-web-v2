@@ -29,7 +29,7 @@ const EventBanner = () => {
           session offers practical, hands-on experience in building secure
           applications and defending against cyber threats.
         </Text>
-        <CountdownTimer targetDate="2024-09-24T04:00:00" />
+        <CountdownTimer targetDate="2024-09-24T16:00:00" />
         <ContentSpacing />
         <ButtonRegEvent>Register for this event</ButtonRegEvent>
       </section>
