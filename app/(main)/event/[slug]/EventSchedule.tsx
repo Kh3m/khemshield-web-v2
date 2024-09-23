@@ -72,7 +72,7 @@ const EventSchedule = () => {
   };
 
   return (
-    <div className="xl:px-10">
+    <section>
       <HeadingSub subheading="Explore">Event Schedule</HeadingSub>
       <ContentSpacing />
       <NextPrevArrows
@@ -157,7 +157,7 @@ const EventSchedule = () => {
         handlePrev={handlePrev}
         handleNext={handleNext}
       /> */}
-    </div>
+    </section>
   );
 };
 
