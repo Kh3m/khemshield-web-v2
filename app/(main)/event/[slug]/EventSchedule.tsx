@@ -72,7 +72,7 @@ const EventSchedule = () => {
   };
 
   return (
-    <div className="lg:px-10">
+    <div className="xl:px-10">
       <HeadingSub subheading="Explore">Event Schedule</HeadingSub>
       <ContentSpacing />
       <NextPrevArrows
