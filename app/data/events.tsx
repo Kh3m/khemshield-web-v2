@@ -59,8 +59,9 @@ export const eventScheduleData = [
     },
     curriculum: {
       topic: "Web Development",
-      subject: "Building a basic website using HTML, CSS snd Javascript",
-      content: `In the "Building a Basic Website using HTML, CSS, and JavaScript" session, participants will apply the skills learned in previous sessions to create a simple, single-page website. They'll begin by structuring the webpage with HTML, using headings, paragraphs, images, and links. Next, they'll style the page with CSS, focusing on layout, colors, fonts, and responsive design. Finally, they'll enhance the site with JavaScript, introducing interactivity like handling user inputs and creating dynamic content. By the end of the session, participants will have built a basic yet functional and visually appealing website.`,
+      subject:
+        "Building a Basic Website: From Figma to Live Using HTML, CSS, and JavaScript",
+      content: `In the "Building a Basic Website Using HTML, CSS, and JavaScript" session, participants will take their Figma designs and bring them to life by building a simple, single-page website. They'll begin by structuring the webpage with HTML, using headings, paragraphs, images, and links. Next, they'll style the page with CSS, focusing on layout, colors, fonts, and responsive design based on the Figma mockups. Finally, they'll enhance the site with JavaScript, adding interactivity like handling user inputs and creating dynamic content. By the end of the session, participants will have transformed their design concepts into fully functional, visually appealing websites.`,
     },
     time: {
       from: "04PM",
