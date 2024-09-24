@@ -14,7 +14,7 @@ export const eventRegisterAction = async (
       .required()
       .messages({
         "string.pattern.base":
-          "Phone number must be a valid international phone number",
+          "Phone number must be a valid phone number with no space",
       }),
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),

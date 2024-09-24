@@ -15,7 +15,7 @@ export const contactAction = async (
       .required()
       .messages({
         "string.pattern.base":
-          "Phone number must be a valid international phone number",
+          "Phone number must be a valid phone number with no space",
       }),
     helpwith: Joi.string().required(),
     message: Joi.string().required(),
