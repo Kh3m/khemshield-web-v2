@@ -115,7 +115,7 @@ const EventPage = () => {
               times
             </Text>
             <BaseSpacing />
-            <CountdownTimer targetDate="2024-09-24T04:00:00" />
+            <CountdownTimer targetDate="2024-09-24T16:00:00" />
             <ContentSpacing />
             <Button
               variant="primary"

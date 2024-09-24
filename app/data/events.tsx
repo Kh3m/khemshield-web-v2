@@ -38,7 +38,7 @@ export const eventScheduleData = [
     curriculum: {
       topic: "Web Development",
       subject: "Introduction to HTML, CSS, and JavaScript",
-      content: `In the "Introduction to HTML, CSS, and JavaScript" session, participants will explore the core technologies for building websites. They will start with HTML to structure web content using elements like headings, paragraphs, lists, and images. Next, they'll learn CSS to style and format the website, focusing on colors, fonts, layout, and responsiveness. Finally, JavaScript will be introduced to add interactivity, enabling dynamic elements such as buttons, form validation, and animations. By the end of the session, attendees will understand how these three technologies work together to create functional, interactive, and visually appealing websites.`,
+      content: `In the "Understanding HTML, Introduction to CSS, and Basics of JavaScript" session, participants will explore the foundational technologies for web development. They will begin with HTML, learning how to structure web content using tags for headings, paragraphs, and images. Next, they'll delve into CSS, focusing on how to style the content, manage layout, and ensure responsiveness. The basics of JavaScript will be introduced, covering how it adds dynamic functionality to web pages. The session will also touch on the interconnection between these technologies, highlight current trends, and discuss future job opportunities. The day concludes with a summary and Q&A session.`,
     },
     time: {
       from: "04PM",
@@ -60,8 +60,7 @@ export const eventScheduleData = [
     curriculum: {
       topic: "Web Development",
       subject: "Building a basic website using HTML, CSS snd Javascript",
-      content:
-        'In the "Building a Basic Website using HTML, CSS, and JavaScript" session, participants will learn the foundational skills for web development. The course will cover structuring a webpage with HTML by utilizing elements such as headings, paragraphs, images, and links. Participants will also explore CSS to style and enhance the visual appeal of their webpage, focusing on layout, typography, colors, and responsive design principles. Additionally, attendees will be introduced to JavaScript, learning how to add interactivity to their website, such as handling user inputs, manipulating the DOM, and creating dynamic content. By the end of the session, participants will have built a fully functional, visually appealing, and interactive website using these fundamental technologies.',
+      content: `In the "Building a Basic Website using HTML, CSS, and JavaScript" session, participants will apply the skills learned in previous sessions to create a simple, single-page website. They'll begin by structuring the webpage with HTML, using headings, paragraphs, images, and links. Next, they'll style the page with CSS, focusing on layout, colors, fonts, and responsive design. Finally, they'll enhance the site with JavaScript, introducing interactivity like handling user inputs and creating dynamic content. By the end of the session, participants will have built a basic yet functional and visually appealing website.`,
     },
     time: {
       from: "04PM",
