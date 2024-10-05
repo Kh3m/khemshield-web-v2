@@ -71,7 +71,7 @@ const WhyJoinEvent = () => {
         <CountdownTimer targetDate="2024-09-24T16:00:00" />
         <BaseSpacing />
 
-        <ButtonRegEvent>Reserve Your Spot</ButtonRegEvent>
+        <ButtonRegEvent ongoing={false}>Reserve Your Spot</ButtonRegEvent>
       </section>
     </section>
   );

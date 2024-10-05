@@ -3,6 +3,7 @@ import SectionSpacing from "@/app/components/Spacing/SectionSpacing";
 import EventRegisterForm from "./EventRegisterForm";
 import { Metadata } from "next";
 import { eventSlug } from "../../eventSlug";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title:
@@ -31,6 +32,12 @@ export const metadata: Metadata = {
 };
 
 const EventRegistrationPage = () => {
+  const eventEnded = true;
+
+  if (eventEnded) {
+    return notFound();
+  }
+
   return (
     <section>
       <Breadcrumb
