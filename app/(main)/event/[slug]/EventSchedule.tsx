@@ -141,7 +141,9 @@ const EventSchedule = () => {
                       handleNext={handleNext}
                     />
                     <div className="flex items-center justify-center my-8">
-                      <ButtonRegEvent>Claim Your Seat</ButtonRegEvent>
+                      <ButtonRegEvent ongoing={false}>
+                        Claim Your Seat
+                      </ButtonRegEvent>
                     </div>
                   </div>
                 </section>

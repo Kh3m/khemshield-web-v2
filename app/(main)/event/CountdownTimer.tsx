@@ -5,6 +5,7 @@ import Text from "@/app/components/Generics/Text";
 import { formatNumber } from "@/app/lib/formatNumber";
 import React, { useState, useEffect, useRef } from "react";
 import EventOngoing from "./EventOngoing";
+import EventCompleted from "./EventCompleted";
 
 // Define the types for the props
 interface CountdownTimerProps {
@@ -20,6 +21,8 @@ interface TimeLeft {
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
+  const ongoing = false;
+
   const calculateTimeLeft = (): TimeLeft => {
     // "2024-09-24T16:00:00"
     const difference = +new Date(targetDate) - +new Date();
@@ -78,7 +81,9 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     return () => clearTimeout(timer);
   }, [timeLeft]);
 
-  if (timeElapsed) return <EventOngoing />;
+  if (!ongoing) return <EventCompleted />;
+
+  if (timeElapsed && !ongoing) return <EventOngoing />;
 
   return (
     <div className="flex gap-4">

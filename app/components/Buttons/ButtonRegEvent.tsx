@@ -10,7 +10,13 @@ import { Add } from "iconsax-react";
 import Text from "../Generics/Text";
 import BaseSpacing from "../Spacing/BaseSpacing";
 
-const ButtonRegEvent = ({ children }: Readonly<PropsWithChildren>) => {
+interface Props {
+  ongoing: boolean;
+}
+const ButtonRegEvent = ({
+  children,
+  ongoing,
+}: Readonly<PropsWithChildren<Props>>) => {
   const [showDialog, setShowDialog] = useState(false);
 
   const handleShowDialog = () => {
@@ -79,6 +85,7 @@ const ButtonRegEvent = ({ children }: Readonly<PropsWithChildren>) => {
 
       <Button
         // onClick={handleShowDialog}
+        shouldDisable={ongoing}
         variant="primary"
         styles="text-xs md:text-sm lg:text-base py-4 lg:py-2"
         elementType="link"

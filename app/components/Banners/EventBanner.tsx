@@ -7,7 +7,11 @@ import ButtonRegEvent from "../Buttons/ButtonRegEvent";
 import ContentSpacing from "../Spacing/ContentSpacing";
 import eventBanner from "@/public/assets/images/events/khemshield_jidem.jpg";
 
-const EventBanner = () => {
+interface Props {
+  ongoing: boolean;
+}
+
+const EventBanner = ({ ongoing }: Readonly<Props>) => {
   return (
     <section
       className="flex flex-col justify-between gap-24
@@ -31,7 +35,7 @@ const EventBanner = () => {
         </Text>
         <CountdownTimer targetDate="2024-09-24T16:00:00" />
         <ContentSpacing />
-        <ButtonRegEvent>Register for this event</ButtonRegEvent>
+        <ButtonRegEvent ongoing={false}>Register for this event</ButtonRegEvent>
       </section>
       <section className="lg:w-1/2">
         <Image
