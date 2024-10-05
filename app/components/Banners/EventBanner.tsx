@@ -35,7 +35,9 @@ const EventBanner = ({ ongoing }: Readonly<Props>) => {
         </Text>
         <CountdownTimer targetDate="2024-09-24T16:00:00" />
         <ContentSpacing />
-        <ButtonRegEvent ongoing={false}>Register for this event</ButtonRegEvent>
+        <ButtonRegEvent ongoing={ongoing}>
+          Register for this event
+        </ButtonRegEvent>
       </section>
       <section className="lg:w-1/2">
         <Image

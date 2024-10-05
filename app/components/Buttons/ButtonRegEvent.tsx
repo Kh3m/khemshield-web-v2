@@ -85,7 +85,7 @@ const ButtonRegEvent = ({
 
       <Button
         // onClick={handleShowDialog}
-        shouldDisable={ongoing}
+        shouldDisable={!ongoing}
         variant="primary"
         styles="text-xs md:text-sm lg:text-base py-4 lg:py-2"
         elementType="link"

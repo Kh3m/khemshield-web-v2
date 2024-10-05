@@ -40,13 +40,13 @@ const Button = ({
   const btnStyle: { [key in ButtonVariantType]: string } = {
     primary: `${
       shouldDisable
-        ? "bg-primary-normal text-white"
-        : "bg-gray-400 text-secondary-normal/60 cursor-not-allowed"
+        ? "bg-gray-400 text-secondary-normal/60 cursor-not-allowed"
+        : "bg-primary-normal text-white"
     } `,
     border: `${
       shouldDisable
-        ? "border-primary-normal border text-secondary-normal/60"
-        : "bg-gray-400 text-secondary-normal cursor-not-allowed"
+        ? "bg-gray-400 text-secondary-normal cursor-not-allowed"
+        : "border-primary-normal border text-secondary-normal/60"
     }`,
   };
 
