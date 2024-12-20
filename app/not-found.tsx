@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./components/Buttons/Button";
 import ContentSpacing from "./components/Spacing/ContentSpacing";
+import Image from "next/image";
 
 const NotFound = () => {
   return (
@@ -26,12 +27,22 @@ const NotFound = () => {
             </div>
           </div>
           <div>
-            <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+            <Image
+              alt="not-found"
+              width={500}
+              height={500}
+              src="https://i.ibb.co/G9DC8S0/404-2.png"
+            />
           </div>
         </div>
       </div>
       <div>
-        <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+        <Image
+          alt="not-found"
+          width={500}
+          height={500}
+          src="https://i.ibb.co/ck1SGFJ/Group.png"
+        />
       </div>
     </div>
   );
