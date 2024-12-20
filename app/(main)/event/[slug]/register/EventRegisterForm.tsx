@@ -37,7 +37,7 @@ const EventRegisterForm = () => {
         router.replace(`/event/${eventSlug}`);
       }
     }
-  }, [state?.message]);
+  }, [state?.message, router]);
 
   useEffect(() => {
     if (hasError) {

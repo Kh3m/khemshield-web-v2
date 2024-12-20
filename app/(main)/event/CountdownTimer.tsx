@@ -3,7 +3,7 @@
 import Heading from "@/app/components/Generics/Heading";
 import Text from "@/app/components/Generics/Text";
 import { formatNumber } from "@/app/lib/formatNumber";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import EventOngoing from "./EventOngoing";
 import EventCompleted from "./EventCompleted";
 
@@ -23,7 +23,7 @@ interface TimeLeft {
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   const ongoing = false;
 
-  const calculateTimeLeft = (): TimeLeft => {
+  const calculateTimeLeft = useCallback((): TimeLeft => {
     // "2024-09-24T16:00:00"
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {
@@ -43,7 +43,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     }
 
     return timeLeft;
-  };
+  }, [targetDate]);
 
   // const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
@@ -58,7 +58,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   useEffect(() => {
     hasMounted.current = true; // Set the mounted flag to true once the component is mounted
     setTimeLeft(calculateTimeLeft()); // Initialize time left once component is mounted
-  }, []);
+  }, [calculateTimeLeft]);
 
   const timeElapsed =
     timeLeft.days <= 0 &&
@@ -79,7 +79,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     }
     // Clear timeout if the component is unmounted
     return () => clearTimeout(timer);
-  }, [timeLeft]);
+  }, [timeLeft, timeElapsed, calculateTimeLeft]);
 
   if (!ongoing) return <EventCompleted />;
 

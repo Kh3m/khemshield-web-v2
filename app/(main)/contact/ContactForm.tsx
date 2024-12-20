@@ -40,7 +40,7 @@ const ContactForm = () => {
         router.replace("/");
       }
     }
-  }, [state?.message]);
+  }, [state?.message, router]);
 
   useEffect(() => {
     if (hasError) {
